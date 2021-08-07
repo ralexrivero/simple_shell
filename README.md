@@ -6,8 +6,7 @@ Simple shell for Unix in C
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ralexrivero/simple_shell)
 ![Lines of code](https://img.shields.io/tokei/lines/github/ralexrivero/simple_shell)
 
-
-## The coders
+## Coders
 
 Ayrton && Ronald
 
