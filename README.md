@@ -1,2 +1,2 @@
 # simple_shell
-Simple shell for Unix project in C
+Simple shell for Unix in C
