@@ -1,6 +1,6 @@
 ![image](img/simple_shell_header.png)
 # simple_shell
-Simple shell for Unix in C  
+Simple Unix Shell. Release date August 24, 2021
 [![Twitter](https://img.shields.io/twitter/url?label=share&style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ralexrivero/simple_shell)
@@ -55,8 +55,12 @@ Editor: VIM 8.1.2269
 * **Files with general information about the program:**
   	  * [AUTHORS](AUTHORS) - List of contributors to this repository.
 	  * [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
+
+* **/img dir:**
+  	  * [img](/img) - directory with support images for README.md
+
 * **Header file with all prototypes function:**
-  	  * [holberton.h](shell.h) - Header file with fuction prototypes
+  	  * [shell.h](shell.h) - Header file with fuction prototypes
 * **strings:**
 
 * **prompt of the shell:**
