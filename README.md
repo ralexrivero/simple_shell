@@ -14,6 +14,7 @@ Simple shell for Unix in C
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Workflow](#Workflow)
 * [Example of Use](#example-of-use)
 * [Bugs](#bugs)
 * [Authors](#authors)
