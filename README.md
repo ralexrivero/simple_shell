@@ -1,3 +1,4 @@
+![image](img/simple_shell_header.png)
 # simple_shell
 Simple shell for Unix in C  
 [![Twitter](https://img.shields.io/twitter/url?label=share&style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)
