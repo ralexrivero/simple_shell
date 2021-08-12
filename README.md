@@ -5,8 +5,142 @@ Simple shell for Unix in C
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ralexrivero/simple_shell)
 ![Lines of code](https://img.shields.io/tokei/lines/github/ralexrivero/simple_shell)
 
-## Coders
+## Table of Contents
 
+* [Introduction](#Introduction)
+* [Environment](#Environment)
+* [File Structure](#file-structure)
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Example of Use](#example-of-use)
+* [Bugs](#bugs)
+* [Authors](#authors)
+* [License](#license)
+
+## Description
+
+simple_shell is a command line interpreter, or shell...
+
+Standard C functions  and system calls employed for this simple_shell:
+ `execve, exit, fork, free, stat, getline, malloc, perror, signal, stat, wait, write.`
+
+## Environment
+
+<!-- ubuntu -->
+<a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a>
+OS: Ubuntu 20.04 LTS
+<!-- bash -->
+  <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
+<!-- c -->
+  <a href="https://www.cprogramming.com/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=C%20Language&color=5C6BC0&logo=c&logoColor=A8B9CC&labelColor=2F333A" alt="C Low level programming language"></a>
+  Language: C
+  Compiler: gcc 9.3.0 options: -Wall -Werror -Wextra -pedantic -std=gnu89
+<!-- vim -->
+<a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a>
+Editor: VIM 8.1.2269
+<!-- git -->
+  <a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
+  Control version: Git
+<!-- github -->
+  <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
+ 
+  Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+
+
+## File Structure
+
+* **Files with general information about the program:**
+  	  * [AUTHORS](AUTHORS) - List of contributors to this repository.
+	  * [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
+* **Header file with all prototypes function used all around the program:**
+  	  * [holberton.h](shell.h) - Header file with fuction prototypes
+* **Functions to manages strings:**
+  	  * [_strdup.c](strdup.c) - Duplicates a string.
+	  * [_strcmp.c](strcmp.c) - Compares two strings.
+	  * [divide_string.c](divide_string.c) - Creates an array of tokens from a buffer with a specified delimiter
+* **Functions to manages prompt of the shell:**
+  	  * [prompt_getline.c](prompt_getline.c) - The main function of the program. The prompt of our custom shell.
+	  * [_getchar.c](_getchar.c) - Read each character from the stdin.
+	  * [_getline.c](_getline.c) - Custom getline function to get the line string from stdin.
+* **Functions to manages to manage commands with the PATH:**
+  	  * [_getenv.c](_getenv.c) - Get the value of the enviroment variable.
+	  * [_which.c](_which.c) - Concatenate the command with the PATH environment variable.
+	  * [list_path.c](list_path.c) - Create a linked list of the directories inside the PATH enviroment variable.
+	  * [add_node_end.c](add_node_end.c) - Function adds a new node at the end of linked list.
+	  * [list_path.c](list_path.c) - Function adds a new node at the end of linked list.
+* **Functions to manages built-in commands:**
+  	  * [get_builtin.c](get_builtin.c) - Function that look for built-in pointer function of built-in.
+	  * [exit.c](exit.c) - Function to manage the built-in exit function.
+	  * [print_env.c](print_env.c) - Prints all the environment variables and its values.
+* **Functions to create and execute a new proccess:**
+  	  * [exec.c](exec.c) - Function to create a new process and execute.
+* **Function to manage signal from the stdin:**
+  	  * [crtl-C.c](crtl-C.c) - Function to manage signal crtl-C from the stdin.
+* **Functions to handle errors:**
+  	  * [err_exec.c](err_exec.c) - Funtion to handling execve error.
+* **Functions that frees allocated memory:**
+  	  * [freedom.c](freedom.c) - Function that frees all allocate memory in an array buffer.
+	  * [free_list.c](free_list.c) - Function that frees  all allocate memory in a linked list.
+* **Other needed functions:**
+  	  * [_itoa.c](_itoa.c) - Custom itoa function to print a unsigned int value.
+	  * [_calloc.c](_calloc.c) - Function that allocate memory and initialized.
+
+## Requirements
+
+simple_shell is designed to run in the `Ubuntu 14.04 LTS` linux environment and to be compiled using the GNU compiler collection v. `gcc 4.8.4` with flags`-Wall, -Werror, -Wextra, and -pedantic.`
+
+## Installation
+
+   - Clone this repository: `git clone "https://github.com/DiegoCol93/simple_shell"`
+   - Change directories into the repository: `cd simple_shell`
+   - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+   - Run the shell in interactive mode: `./hsh`
+   - Or run the shell in non-interactive mode: example `echo "Hello world!" | ./hsh`
+
+## Usage
+
+The simple_shell is designed to execute commands in a similar manner to sh, (see man page for complete information on usage):
+
+## Features
+
+- [ ] uses the PATH
+- [ ] implements builtins
+- [ ] handles command line arguments
+- [ ] custom strtok function
+- [ ] uses exit status
+- [ ] shell continues upon Crtl+C (**^C**)
+- [ ] handles comments (#)
+- [ ] handles **;**
+- [ ] custom getline type function
+- [ ] handles **&&** and **||**
+- [ ] aliases
+- [ ] variable replacement
+
+
+## Builtins
+
+- [ ] exit
+- [ ] env
+- [ ] setenv
+- [ ] unsetenv
+- [ ] cd
+- [ ] help
+- [ ] history
+
+## Example of Use
+First compile and then run the executable file on your terminal
+
+```
+$ ./hsh
+$ # ....
+$ ls -l
+file example
+```
+## Bugs
+
+
+## Authors
 Ayrton && Ronald
 
 Ayrton
@@ -23,3 +157,6 @@ Ronald
 <a href="https://github.com/ralexrivero/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/ralexrivero?style=social" alt="Ralex | Github"> </a>
 
 <br/>
+
+## License
+This simple_shell is under Apache license. Feel free to contribute to this repo.
