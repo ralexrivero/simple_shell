@@ -136,12 +136,18 @@ file example
 
 
 ## Authors
-Ayrton && Ronald
+Ayrton & Fabiana & Ronald
 
 Ayrton
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/hippocampus3282?style=social" alt="Ayrton | Github"> </a>
 <br/>
+
+Fabiana
+
+<a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/fabianatellechea?style=social" alt="Fabiana | Github"> </a>
+<br/>
+
 
 Ronald
 
