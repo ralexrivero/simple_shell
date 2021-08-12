@@ -93,8 +93,9 @@ Editor: VIM 8.1.2269
 The simple_shell is designed to execute commands in a similar manner to sh, (see man page for complete information on usage):
 
 ## Workflow
+<!-- iframes does not supported, use only svg with relative path -->
+![image](img/wkf_simple_shell_01.svg)
 
-<div style="width: 960px; height: 720px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:960px; height:720px" src="https://lucid.app/documents/embeddedchart/72b65e76-1672-4759-a598-8b89c978eed0" id="f8C32ONcQzgj"></iframe></div>
 
 ## Features
 
