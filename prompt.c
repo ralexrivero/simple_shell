@@ -26,20 +26,23 @@ char *shell_get_line(void)
         }
 }
 
-int main(__attribute__((unused))int argc, char **argv, __attribute__((unused))char **env)
+int main(__attribute__((unused))int argc, __attribute__((unused))char **argv, __attribute__((unused))char **env)
 {
         char *prompt = "$ ";
-
+        int status = 1;
 
         /* initialize the shell */
 
         /* loop waiting for commands */
 
         do {
-                printf(prompt);
+                write(1, prompt, 2);
                 shell_get_line();
         }
+        while (status);
+        
         
 
         /* return 0 to terminate the shell and free */
+        return (0);
 }
