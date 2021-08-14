@@ -1,6 +1,27 @@
 #include "shell.h"
 
-char *shell_get_line(void)
+
+/**
+ * @brief prints a prompt at stdout
+ * wait user input
+ * execute the command
+ * @argc: number of arguments passed at start the shell
+ * @argv: pointer to array or arguments
+ * @env: pointer to environment variables
+ * @return int 0 when done
+ */
+int main(__attribute__((unused))int argc, __attribute__((unused))char **argv, __attribute__((unused))char **env)
+{
+        /* initialize the shell */
+        shell_initialize();
+        /* loop waiting for commands */
+        shell_interprete();
+        /* return 0 to terminate the shell and free */
+        shell_terminate();
+}
+
+
+char *shell_interprete(void)
 {
         int varInt_buffer = BUFFER_SIZE;
         char *varChr_buffer = malloc(sizeof(char) * varInt_buffer);
@@ -26,23 +47,3 @@ char *shell_get_line(void)
         }
 }
 
-int main(__attribute__((unused))int argc, __attribute__((unused))char **argv, __attribute__((unused))char **env)
-{
-        char *prompt = "$ ";
-        int status = 1;
-
-        /* initialize the shell */
-
-        /* loop waiting for commands */
-
-        do {
-                write(1, prompt, 2);
-                shell_get_line();
-        }
-        while (status);
-        
-        
-
-        /* return 0 to terminate the shell and free */
-        return (0);
-}
