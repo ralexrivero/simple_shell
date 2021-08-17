@@ -71,7 +71,7 @@ char **shell_tokenize(char *input)
 			tokens_backup = tokens;
 			tokens = realloc(tokens, bufsize * sizeof(char*));
 			if (!tokens) 
-				free(tokens_backup);
+/*				free(tokens_backup); */
 			perror("malloc error 2");
 			exit(EXIT_FAILURE);
 		}

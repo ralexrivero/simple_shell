@@ -15,20 +15,17 @@
 #include <signal.h>
 
 /* the basic shell lifetime */
-void shell_initialize(void);
-void *shell_interprete(void);
-void shell_terminate(void);
+char *shell_input(void);
+char **shell_tokenize(char *input);
+int shell_execute(char **arguments);
 
 /* the shell commands */
-char *shell_read_line(void);
-char **shell_tokenize_line(char *line);
 
 /* execute */
-int shell_execute_args(char **args);
+
 
 /* built-in commands */
 
 
-/* built-in commands and functions */
 
 #endif
