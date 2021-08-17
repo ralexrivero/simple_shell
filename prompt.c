@@ -1,71 +1,85 @@
 #include "shell.h"
 
 /**
- * @brief prints a prompt at stdout
- * wait user input
- * execute the command
- * @argc: number of arguments passed at start the shell
- * @argv: pointer to array or arguments
- * @env: pointer to environment variables
- * @return int 0 when done
+ * main - entry point
  */
-int main(int argc, char **argv, char **env)
+
+int main(void)
 {
-        /* initialize the shell */
-        // shell_initialize();
-        /* loop waiting for commands */
-        shell_interprete();
-        /* return 0 to terminate the shell and free */
-        // shell_terminate();
-        return (EXIT_SUCCESS);
+char *input;
+char **arguments;
+int status;
+char prompt[] = "\033[1;36m$ \033[0m";
+
+	do {
+		write(1, prompt , 15);
+input = shell_input();
+printf("%s\n", input);
+arguments = shell_tokenize(input);
+/* status = shell_execute(arguments); */
+
+/* free(input); */
+/* free(arguments); */
+} while (status); 
 }
-void shell_initialize(void)
-{
-}
+
+
 /**
- * @brief shell interprete
- * 
- * @return void* 
+ * shell_input
  */
-void *shell_interprete(void)
+char *shell_input(void)
 {
-        ssize_t varSST_read = 0;
-        size_t varSTp_read_bytes = 0;
-        char * varChr_str = NULL;
-        
-        /* print a prompt */
-        write(1, "\033[1;36m$ \033[0m", 14);
+	/* when NULL and getline allocate buffer auto */
+	char *input = NULL;
+	ssize_t buffer = 0;
 
-        varSTp_read_bytes = getline( &varChr_str, &varSST_read, stdin );
-        write(1, varChr_str, varSST_read);
-        
-        free(varChr_str);
+	if (getline(&input, &buffer, stdin) == -1)
+	{
+		/* Return the EOF indicator for STREAM.  */
+		if (feof(stdin))
+		{
+			exit(EXIT_SUCCESS);
+		}
+		else
+		{
+			perror("Error on input line");
+			exit (EXIT_FAILURE);
+		}
+	}
+	return (input);
 }
 
-char *shell_read_line(void)
+char **shell_tokenize(char *input)
 {
-        ssize_t varSST_read = 0;
-        size_t varSTp_read_bytes = 0;
-        char * varChr_str = NULL;
+	int bufsize = BUFFER_TOKEN, i = 0;
+	char **tokens = malloc(bufsize * sizeof(char*));
+	char *piece, **tokens_backup;
+	char delim[] = " ";
 
-        varSTp_read_bytes = getline( &varChr_str, &varSST_read, stdin );
+	if (!tokens) {
+		perror("malloc error 1");
+		exit(EXIT_FAILURE);
+	}
 
-        write(1, varChr_str, varSST_read);
-        
-        free(varChr_str);
-}
+	piece = strtok(input, delim);
+	while (piece != NULL) {
+		tokens[i] = piece;
+		i++;
 
-char **shell_tokenize_line(char *varChr_line)
-{
-}
+		if (i >= bufsize) {
+			bufsize += BUFFER_TOKEN;
+			tokens_backup = tokens;
+			tokens = realloc(tokens, bufsize * sizeof(char*));
+			if (!tokens) 
+				free(tokens_backup);
+			perror("malloc error 2");
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	piece = strtok(NULL, delim);
 
 
-int shell_execute_args(char **varChr_args)
-{
-
-}
-
-void shell_terminate(void)
-{
-
+tokens[i] = NULL;
+return (tokens);
 }

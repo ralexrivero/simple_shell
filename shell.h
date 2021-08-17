@@ -3,6 +3,7 @@
 
 /* start buffer to use or realloc */
 #define BUFFER_SIZE 1024
+#define BUFFER_TOKEN 64
 
 /* libraries */
 #include <sys/wait.h>
