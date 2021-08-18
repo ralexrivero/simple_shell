@@ -19,5 +19,6 @@ int main(void)
 
 		input = shell_read();
 		arguments = shell_parse(input);
+		shell_execute(arguments);
 	}
 }

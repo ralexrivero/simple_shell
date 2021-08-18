@@ -57,9 +57,7 @@ char *shell_read(void);
 char **shell_parse(char *input);
 
 /* the shell commands */
-
-/* execute */
-
+int shell_execute(char **args);
 
 /* built-in commands */
 
