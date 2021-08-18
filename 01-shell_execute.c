@@ -13,16 +13,10 @@ int shell_execute(char **arguments)
         pid_t pid;
         int status;
         /* execve declaration */
-        char *env[]={"PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL};
-        
-        char cmd[] = "/usr/bin/ls";
-        char *cmd2;
-        cmd2 = strcat(cmd,arguments[0]);
-
-        char * argv[] = {"ls", "-l", "/tmp", NULL};
-
+        /* "PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL}; */
+        char cmd[] = "/bin/ls";
+        char * argv[] = {"ls", NULL};
         char * argenv[] = {NULL};
-
         /* fork current process and save status */
         pid = fork();
         /* child process is pid 0 */
@@ -35,13 +29,11 @@ int shell_execute(char **arguments)
         if (pid == 0)
         {
                 /* execute the command */
-                if(execve(cmd2, argv, argenv) == -1)
+                if(execve(cmd, argv, argenv) == -1)
                 {
                         perror("execve error");
                 }
                 exit(EXIT_FAILURE);
-
-                
         }
         else
         {

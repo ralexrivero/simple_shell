@@ -27,6 +27,7 @@ char **shell_parse(char *input)
         token = strtok(str, delim);
 
         /* asign memory for the array of char pointers */
+        
         cmds = malloc(sizeof(char*) * words);
         if (!cmds)
         {
@@ -45,7 +46,12 @@ char **shell_parse(char *input)
                 token = strtok(NULL, delim);
                 i++;
         }
+        /* one more space for NULL terminate needed by execve */
+        i++;
+        cmds[i] = token;
+
         /* do not free cmds, will needed to execute arguments */
         /* for (i = 0; i < words; i++) */
         /* printf("cmds[%d]: %s\n", i, cmds[i]); */
+        return (cmds);
 }
