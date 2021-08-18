@@ -14,8 +14,13 @@ int shell_execute(char **arguments)
         int status;
         /* execve declaration */
         char *env[]={"PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL};
+        
         char cmd[] = "/usr/bin/ls";
-        /* char * argv[] = {"ls", "-l", "/tmp", NULL}; */
+        char *cmd2;
+        cmd2 = strcat(cmd,arguments[0]);
+
+        char * argv[] = {"ls", "-l", "/tmp", NULL};
+
         char * argenv[] = {NULL};
 
         /* fork current process and save status */
@@ -30,7 +35,7 @@ int shell_execute(char **arguments)
         if (pid == 0)
         {
                 /* execute the command */
-                if(execve(cmd, arguments, argenv) == -1)
+                if(execve(cmd2, argv, argenv) == -1)
                 {
                         perror("execve error");
                 }
