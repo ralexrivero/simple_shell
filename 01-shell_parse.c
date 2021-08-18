@@ -10,7 +10,7 @@ char **shell_parse(char *input)
         char *token = NULL;
         /* array of strings to store the commands (tokens) */
         char **cmds;
-        int i = 0, j = 0, words = 0, word_len = 0;
+        int i = 0, words = 0, word_len = 0;
         
         /* count words in input */
         words = _wordcount(input);
@@ -25,7 +25,8 @@ char **shell_parse(char *input)
 
         /* return a pointer to the first token found in str */
         token = strtok(str, delim);
-
+        
+        printf("%i: %s\n", _wordlen(token), token);
         /* asign memory for the array of char pointers */
         
         cmds = malloc(sizeof(char*) * words);

@@ -8,7 +8,6 @@
 char *shell_read(void)
 {
 	char *input = NULL;
-	char **tokens = NULL, **commands = NULL;
         /* define and set to 0 to getline allocate memory */
         ssize_t buffer_size = 0;
 
