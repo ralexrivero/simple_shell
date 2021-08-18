@@ -13,12 +13,9 @@ char **shell_parse(char *input)
         int i = 0, j = 0, words = 0, word_len = 0;
         
         /* count words in input */
-        for (; i < _strlen(input); i++)
-        {
-                if (input[i] == ' ')
-                words++;
-        }
-        words++;
+        words = _wordcount(input);
+
+        /* printf("words: %d\n", words); */
 
         /* copy the input form stdin to a str */
         /* really does not work because actually
@@ -31,16 +28,24 @@ char **shell_parse(char *input)
 
         /* asign memory for the array of char pointers */
         cmds = malloc(sizeof(char*) * words);
+        if (!cmds)
+        {
+                perror("malloc error 1");
+                exit (EXIT_FAILURE);
+        }
         /* go through other tokens */
+        i = 0;
         while (token != NULL)
         {
-                word_len = _strlen(token);
-                cmds[i] = malloc(sizeof(char) * word_len + 1);
+                word_len = _wordlen(token);
+               /* asign memory to each pointer for the length of string */
+                cmds[i] = malloc(sizeof(char) * word_len);
                 cmds[i] = token;
-                printf("cmds[%d] = %s\n", cmds[i]);
+                /* printf("i = %d, word_len = %d, token: %s\n", i, word_len, token); */
                 token = strtok(NULL, delim);
                 i++;
         }
-
-        
+        /* do not free cmds, will needed to execute arguments */
+        /* for (i = 0; i < words; i++) */
+        /* printf("cmds[%d]: %s\n", i, cmds[i]); */
 }

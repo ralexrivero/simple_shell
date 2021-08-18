@@ -44,6 +44,9 @@
 int _puts(char *string);
 int _strlen(char *string);
 int _putchar(char c);
+int _wordlen(char *string);
+int _wordcount(char *string);
+int _nospace(char *string);
 
 
 /* the basic shell lifetime */
