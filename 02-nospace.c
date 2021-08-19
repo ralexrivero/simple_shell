@@ -23,9 +23,3 @@ int _nospace(char *string)
         }
         return (words);
 }
-
-/* int main(void)
-{
-        int words = _nospace("ola que ase");
-        printf("no space: %d\n", words);
-} */
