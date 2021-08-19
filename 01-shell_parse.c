@@ -23,7 +23,7 @@ char **shell_parse(char *input)
         token = strtok(str, delim);      
         /* asign memory for the array of char pointers */
         
-        cmds = malloc(sizeof(char*) * words);
+        cmds = calloc(sizeof(char*), words);
         if (!cmds)
         {
                 perror("malloc error 1");
@@ -35,13 +35,13 @@ char **shell_parse(char *input)
         {
                 word_len = _wordlen(token);
                /* asign memory to each pointer for the length of string */
-                cmds[i] = malloc(sizeof(char) * word_len);
+                cmds[i] = calloc(sizeof(char), word_len);
                 cmds[i] = token;
                 token = strtok(NULL, delim);
                 i++;
         }
         /* one more space for NULL terminate needed by execve */
-        cmds[i] = NULL;
+        /* cmds[i] = NULL; */
         /* do not free cmds, will needed to execute arguments */
         return (cmds);
 }

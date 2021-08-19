@@ -18,7 +18,7 @@ int main(void)
 		char **arguments = NULL;
  
 		input = shell_read();
-	/*	arguments = shell_parse(input); */
-	/*	shell_execute(arguments); */
+		arguments = shell_parse(input);
+		shell_execute(arguments);
 	}
 }

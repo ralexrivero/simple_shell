@@ -40,5 +40,6 @@ int shell_execute(char **arguments)
                 /* wait parent process */
                 wait(&status);
         }
+        free(arguments);
         return (0);
 }
