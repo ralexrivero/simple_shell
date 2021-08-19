@@ -1,6 +1,6 @@
 ![image](img/simple_shell_header.png)
 # simple_shell
-Simple Unix Shell. Release date August 24, 2021
+Simple Unix Shell. Release date August 26, 2021
 [![Twitter](https://img.shields.io/twitter/url?label=share&style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2Fsimple_shell)
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ralexrivero/simple_shell)
