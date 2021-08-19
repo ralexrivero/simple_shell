@@ -18,9 +18,3 @@ int _wordcount(char *string)
         }
         return (words);
 }
-
-/* int main(void)
-{
-        int words = _wordcount(" ola que ase ");
-        printf("words: %d\n", words);
-} */

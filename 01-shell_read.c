@@ -25,10 +25,11 @@ char *shell_read(void)
                 else
                 {
                         perror("getline failure\n");
+                        free(input);
+                        input = NULL;
                         exit(EXIT_FAILURE);
                 }
-        }
-        
-        printf("input 1: %s, largo: %d\n",input, _strlen("input"));
+        }       
         return (input);
+        /* returns input with an EOF */
 }

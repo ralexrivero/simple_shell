@@ -10,6 +10,8 @@ int _wordlen(char *string)
 {
         int length = 0;
 
+        if (!string)
+        return (length);
         while (*(string + length) && *(string + length) != 32)
         {
                 length++;

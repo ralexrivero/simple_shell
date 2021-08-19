@@ -12,13 +12,15 @@ int shell_execute(char **arguments)
         /* fork declaration */
         pid_t pid;
         int status;
+        int i = 0;
         /* execve declaration */
         /* "PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL}; */
         char cmd[] = "/bin/ls";
         char * argv[] = {"ls", NULL};
         char * argenv[] = {NULL};
         /***************************************/
-        printf("%s\n", arguments[0]);
+        for (i = 0; i <= _strlen(*arguments); i++)
+        printf("cmds[%d]: %s, len = %d\n",i, arguments[i], _wordlen(arguments[i]));
         /* fork current process and save status */
         pid = fork();
         /* child process is pid 0 */
