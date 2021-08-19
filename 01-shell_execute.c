@@ -14,10 +14,10 @@ int shell_execute(char **arguments)
         int status;
         /* execve declaration */
         /* "PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL}; */
-        char cmd[] = "/bin/ls";
-       /*  char * argv[] = {"ls", NULL}; */
+        char cmd[] = "/bin/";
         char * argenv[] = {NULL};
 
+        strcat(cmd, arguments[0]);
         /* fork current process and save status */
         pid = fork();
         /* child process is pid 0 */
@@ -40,5 +40,5 @@ int shell_execute(char **arguments)
                 /* wait parent process */
                 wait(&status);
         }
-        return (status);
+        return (0);
 }
