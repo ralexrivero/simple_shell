@@ -17,10 +17,11 @@ int shell_execute(char **arguments)
         char cmd[] = "/bin/ls";
         char * argv[] = {"ls", NULL};
         char * argenv[] = {NULL};
+        /***************************************/
+        printf("%s\n", arguments[0]);
         /* fork current process and save status */
         pid = fork();
         /* child process is pid 0 */
-        
         if (pid == -1)
         {
                 perror("fork error");
@@ -40,4 +41,5 @@ int shell_execute(char **arguments)
                 /* wait parent process */
                 wait(&status);
         }
+        return (status);
 }

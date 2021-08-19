@@ -11,10 +11,16 @@ int _wordcount(char *string)
 
         for (; string[i] != '\0'; i++)
         {
-                if (string[i] !=32 && string[i + 1] == 32)
+                if (string[i] !=32 && ((string[i + 1] == 32) || (string[i] == '\t') || (string[i + 1] == '\n')))
                 words++;
-                if (string[i] !=32 && string[i + 1] == '\0')
+                if ((string[i] !=32 || string[i] == '\t') && string[i + 1] == '\0')
                 words++;
         }
         return (words);
 }
+
+/* int main(void)
+{
+        int words = _wordcount(" ola que ase ");
+        printf("words: %d\n", words);
+} */

@@ -14,6 +14,7 @@ char **shell_parse(char *input)
         
         /* count words in input */
         words = _wordcount(input);
+        printf("words: %d\n", words);
 
         /* printf("words: %d\n", words); */
 

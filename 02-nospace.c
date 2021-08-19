@@ -12,11 +12,20 @@ int _nospace(char *string)
         while (*(string + i))
         {
                 if (*(string + i) != 32)
+                {
                         words++;
                         if (*(string + i) != 32)
                         i++;
                         if (*(string + i) == 32)
                         i++;
+                }
+                        
         }
         return (words);
 }
+
+/* int main(void)
+{
+        int words = _nospace("ola que ase");
+        printf("no space: %d\n", words);
+} */

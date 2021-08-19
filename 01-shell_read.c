@@ -9,7 +9,7 @@ char *shell_read(void)
 {
 	char *input = NULL;
         /* define and set to 0 to getline allocate memory */
-        ssize_t buffer_size = 0;
+        size_t buffer_size = 0;
 
         /* print prompt in color and reset color of input */
 	_puts(BRAND PROMPT RESET);
@@ -28,5 +28,7 @@ char *shell_read(void)
                         exit(EXIT_FAILURE);
                 }
         }
+        
+        printf("input 1: %s, largo: %d\n",input, _strlen("input"));
         return (input);
 }
