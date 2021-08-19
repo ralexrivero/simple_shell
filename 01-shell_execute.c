@@ -14,7 +14,7 @@ int shell_execute(char **arguments)
         int status;
         /* execve declaration */
         /* "PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL}; */
-        char cmd[] = "/bin/";
+        char cmd[] = "/usr/bin/";
         char * argenv[] = {NULL};
 
         strcat(cmd, arguments[0]);
