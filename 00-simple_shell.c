@@ -21,5 +21,4 @@ int main(void)
 		arguments = shell_parse(input);
 		shell_execute(arguments);
 	}
-	return (0);
 }
