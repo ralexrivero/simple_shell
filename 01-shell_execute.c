@@ -17,6 +17,9 @@ int shell_execute(char **arguments)
         char cmd[] = "/usr/bin/";
         char * argenv[] = {NULL};
 
+        if (arguments[0] == NULL)
+        return (1);
+
         strcat(cmd, arguments[0]);
         /* fork current process and save status */
         pid = fork();
@@ -33,13 +36,12 @@ int shell_execute(char **arguments)
                 {
                         perror("execve error");
                 }
-                exit(EXIT_FAILURE);
+                exit (EXIT_FAILURE);
         }
         else
         {
                 /* wait parent process */
                 wait(&status);
         }
-        free(arguments);
-        return (0);
+        return (1);
 }

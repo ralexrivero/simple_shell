@@ -12,7 +12,6 @@ char *shell_read(void)
         size_t buffer_size = 0;
 
         /* print prompt in color and reset color of input */
-	_puts(BRAND PROMPT RESET);
         
         /* return -1 means failure reading line or reading EOF */
         if (getline(&input, &buffer_size, stdin) == -1)
@@ -25,8 +24,6 @@ char *shell_read(void)
                 else
                 {
                         perror("getline failure\n");
-                        free(input);
-                        input = NULL;
                         exit(EXIT_FAILURE);
                 }
         }       

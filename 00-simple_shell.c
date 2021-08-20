@@ -9,16 +9,23 @@
 
 int main(void)
 {
+	int status = 0;
+	char *input;
+	char **arguments;
+
 	/* Handle Ctrl+C: not quit when the user inputs ^C */
 	/* otherwise you can use Ctrl+D or EOF to exit */
 	signal(SIGINT, SIG_IGN);
-        while (1)
+
+	status = 1;
+        while (status)
 	{
-		char *input = NULL;
-		char **arguments = NULL;
- 
+
+		_puts(BRAND PROMPT RESET);
 		input = shell_read();
 		arguments = shell_parse(input);
-		shell_execute(arguments);
+		status = shell_execute(arguments);
+		free(arguments);
 	}
+	exit (EXIT_SUCCESS);
 }
