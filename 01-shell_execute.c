@@ -29,7 +29,7 @@ int shell_execute(char **arguments)
                 perror("fork error");
                 exit (EXIT_FAILURE);
         }
-        if (pid == 0)
+        else if (pid == 0)
         {
                 /* execute the command */
                 if(execve(cmd, arguments, argenv) == -1)
@@ -39,9 +39,12 @@ int shell_execute(char **arguments)
                 exit (EXIT_FAILURE);
         }
         else
-        {
                 /* wait parent process */
-                wait(&status);
+        while (!WIFEXITED(status) && !WIFSIGNALED(status))
+        {
+                waitpid(pid, &status, WUNTRACED);
+                
         }
+        kill(pid, SIGKILL);
         return (1);
 }

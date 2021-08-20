@@ -12,7 +12,8 @@ char **shell_parse(char *input)
         /* array of strings to store the commands (tokens) */
         /* asign memory for the array of char pointers */
         char **cmds = calloc(sizeof(char*), words);
-        int i = 0, word_len = 0;     
+        int i = 0;
+        /* int word_len = 0; */     
 
         if (!cmds)
         {
@@ -24,17 +25,17 @@ char **shell_parse(char *input)
         /* go through other tokens */
         while (token != NULL)
         {
-                word_len = _wordlen(token);
+                /* word_len = _wordlen(token); */
                /* asign memory to each pointer for the length of string */
-                cmds[i] = calloc(sizeof(char), word_len);
-                if(!cmds[i])
-                {
+/*                 cmds[i] = calloc(sizeof(char), word_len); */
+/*                 if(!cmds[i]) */
+/*                 {
                         perror("calloc error 2");
                         exit (EXIT_FAILURE);
-                }
+                } */
                 cmds[i] = token;
-                token = strtok(NULL, delim);
                 i++;
+                token = strtok(NULL, delim);
         }
         /* one more space for NULL terminate needed by execve */
         cmds[i] = NULL;
