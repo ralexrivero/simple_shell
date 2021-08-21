@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	int status = 0;
+	int status = 1;
 	char *input;
 	char **arguments;
 
@@ -17,7 +17,6 @@ int main(void)
 	/* otherwise you can use Ctrl+D or EOF to exit */
 	signal(SIGINT, SIG_IGN);
 
-	status = 1;
         while (status)
 	{
 
@@ -25,6 +24,7 @@ int main(void)
 		input = shell_read();
 		arguments = shell_parse(input);
 		status = shell_execute(arguments);
+
 		free(arguments);
 	}
 	exit (EXIT_SUCCESS);

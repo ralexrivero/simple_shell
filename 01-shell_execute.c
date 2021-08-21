@@ -14,13 +14,11 @@ int shell_execute(char **arguments)
         int status;
         /* execve declaration */
         /* "PATH=/usr/local/sbin/:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games",NULL}; */
-        char cmd[] = "/usr/bin/";
-        char * argenv[] = {NULL};
-
+        
+        /* printf("cmd: %s\n", cmd); */
         if (arguments[0] == NULL)
         return (1);
 
-        strcat(cmd, arguments[0]);
         /* fork current process and save status */
         pid = fork();
         /* child process is pid 0 */
@@ -32,7 +30,7 @@ int shell_execute(char **arguments)
         else if (pid == 0)
         {
                 /* execute the command */
-                if(execve(cmd, arguments, argenv) == -1)
+                if (execvp(arguments[0], arguments) == -1)
                 {
                         perror("execve error");
                 }
@@ -40,11 +38,8 @@ int shell_execute(char **arguments)
         }
         else
                 /* wait parent process */
-        while (!WIFEXITED(status) && !WIFSIGNALED(status))
-        {
-                waitpid(pid, &status, WUNTRACED);
-                
-        }
-        kill(pid, SIGKILL);
+                {
+                        wait(&status);
+                        }
         return (1);
 }

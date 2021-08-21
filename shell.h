@@ -32,6 +32,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <signal.h>
+#include <errno.h>
 
 /**
  * @brief prototypes for manage strings
