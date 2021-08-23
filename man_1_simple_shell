@@ -1,0 +1,65 @@
+.TH hsh 1 "August 24, 2021" "1.0" "hsh General Commands Manual"
+
+.SH NAME
+
+.B simple_shell - hsh
+- command line interpreter or shell
+
+
+.SH SYNOPSIS
+
+.B  ./hsh
+.I (no options yet)
+
+
+
+.SH DESCRIPTION
+
+simple_shell is a command line interpreter
+
+
+.SH OVERVIEW
+
+Reading from either the terminal or files, simple_shell interprets and executes commands.
+
+
+.SH INVOCATION
+
+Compile simple_shell with the GNU Compiler Collection, preferably using gcc plus the below specified flags, as per this example (note the use of the * wildcard which enables all related .c files to be compiled concurrently):
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+
+
+.SH EXECUTABLES
+
+Example of executables:
+
+
+
+.SH BUILTINS
+
+The following builtin commands are supported:
+
+
+
+
+Example of builtin command:
+
+
+
+.SH BUGS
+No known bugs at this writing (August 24, 2021).
+Please report any issues to the authors.
+
+.SH AUTHOR
+
+Ayrton Coelho <ayrtoncoelhods@gmail.com>
+Fabiana Telechea <fabianagtellechea@gmail.com>
+Ronald Rivero <ralexrivero@gmail.com>
+
+Ronald Rivero <ralexrivero@gmail.com>
+.SH SEE ALSO
+sh
