@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * shell_read -
- * 
- * Return: char* 
+ * shell_read -read a line from the standard input
+ *
+ * Return: pointer to the line readed
  */
 
 char *shell_read(void)
@@ -26,7 +26,7 @@ char *shell_read(void)
 			perror("getline failure\n");
 			exit(EXIT_FAILURE);
 		}
-	}       
+	}
 	return (input);
 	/* returns input with an EOF */
 }

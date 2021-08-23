@@ -30,7 +30,8 @@ int shell_execute(char **arguments, char **pathparsed)
 	/* combine path, slash and command */
 	for (i = 1; pathparsed[i] != NULL; i++)
 	{
-		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i]) + strlen(arguments[0]) + 2));
+		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i])
+		 + strlen(arguments[0]) + 2));
 		strcpy(eval_cmd, pathparsed[i]);
 		strcat(eval_cmd, "/");
 		strcat(eval_cmd, arguments[0]);
