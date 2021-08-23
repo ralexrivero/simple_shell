@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * @brief putchar custom function
- * Description: print a char
+ * _putchar - putchar custom function
+ * Description: print a char to the stdo
  */
 
 int _putchar(char c)
