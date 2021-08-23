@@ -1,23 +1,15 @@
 #include "shell.h"
 
+/**
+ * set_env - get the environment variables
+ *
+ * @envp: pointer to the environment variables
+ * Return: pointer to array of paths
+ */
 char **set_env(char **envp)
 {
-        char *path = _getenv("PATH", envp);
-        char **pathparsed = fullpath(path, ENVDELIM);
+	char *path = _getenv("PATH", envp);
+	char **pathparsed = fullpath(path, ENVDELIM);
 
-        return(pathparsed);
+	return (pathparsed);
 }
-
-/* int main(int argc, char **argv, char **envp)
-{
-        (void)argc;
-        (void)argv;
-        char **envparsed = set_env(envp);
-        int i =0;
-         for (i = 0; envparsed[i] != NULL; i++)
-         {
-                 printf("setenv: %s\n", envparsed[i]);
-         }
-        
-        free(envparsed);
-} */
