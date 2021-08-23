@@ -5,7 +5,7 @@
  *
  * @arguments: the arguments to be executed
  * @pathparsed: thepath parsed from the input to try the first argument
- * Return: int 
+ * Return: 1 to return to the init and continue the loop
  */
 int shell_execute(char **arguments, char **pathparsed)
 {
