@@ -4,7 +4,6 @@ char *_getenv(const char *name, char **envp)
 {
         int i = 0, j = 0, compare = 0;
 
-        printf(WAY RED"_getenv\n"RESET);
         /* run trough the env variables */
         for (;envp[i] != NULL; i++)
         {

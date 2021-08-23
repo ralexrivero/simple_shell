@@ -5,8 +5,6 @@ char **fullpath(char *path, char *envdelim)
 
 	char *token_dir =NULL;
 	int path_q = _worddelimcount(path);
-/*  	printf("q: %d\n",path_q); */
-	printf(WAY RED"fullpath \n"RESET);
 
 /* tokenize the path */
 /* the [0] is "PATH" */
@@ -23,11 +21,9 @@ char **fullpath(char *path, char *envdelim)
 	{
 		directories[i] = token_dir;
 		token_dir = strtok(NULL, envdelim);
-/*  		printf("dir[%d]: %s\n", i, directories[i]); */
 		i++;
 	}
 	directories[i] = NULL;
-/* 	printf("dir[%d]: %s\n", i, directories[i]); */
         return (directories);
 }
 

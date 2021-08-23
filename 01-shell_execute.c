@@ -1,12 +1,5 @@
 #include "shell.h"
 
-/**
- * @brief take arguments from input
- * 
- * @param args 
- * @return int 
- */
-
 int shell_execute(char **arguments, char **pathparsed)
 {
         /* fork declaration */
@@ -16,9 +9,6 @@ int shell_execute(char **arguments, char **pathparsed)
 
         if (arguments[0] == NULL)
         return (1);
-        printf(WAY RED"execute \n"RESET);
-        for(int i = 0; pathparsed[i] != NULL; i++)
-        printf("path in exec[%d]: %s\n",i, pathparsed[i]);
 
         /* fork current process and save status */
         pid = fork();
@@ -40,7 +30,6 @@ int shell_execute(char **arguments, char **pathparsed)
 		/* look if can access command */
                 if (access(eval_cmd, X_OK)== 0)
                 {
-                        printf("access: %d\n",access(eval_cmd, X_OK));
                         /* if can access, execute command */
                         if (execve(eval_cmd, arguments, NULL) == -1)
 			{
@@ -48,10 +37,8 @@ int shell_execute(char **arguments, char **pathparsed)
 				}
 				exit (EXIT_FAILURE);
 				}
-		printf("eval_cmd: %s\n", eval_cmd);
 		free(eval_cmd);
 	}
-
 				}
 				else
 				/* wait parent process */

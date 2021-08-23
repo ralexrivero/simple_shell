@@ -8,9 +8,7 @@
  */
 
 char **shell_parse(char *input, char *delim)
-{
-        /* string to broke in smaller strings (tokens) */
-        
+{        
         /* this will be the array of strings (the tokens) */
         char *token = NULL;
         /* count words in input */
@@ -19,7 +17,6 @@ char **shell_parse(char *input, char *delim)
         /* asign memory for the array of char pointers */
         char **cmds = malloc(sizeof(char*)* (words + 2));
         int i = 0;
-        printf(WAY RED"parse\n"RESET);
         if (!cmds)
         {
                 perror("calloc error 1");

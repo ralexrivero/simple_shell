@@ -2,7 +2,6 @@
 
 char **set_env(char **envp)
 {
-        printf(WAY RED"set_env\n"RESET);
         char *path = _getenv("PATH", envp);
         char **pathparsed = fullpath(path, ENVDELIM);
 
