@@ -31,7 +31,7 @@ int shell_execute(char **arguments, char **pathparsed)
         else if (pid == 0)
         {
 	/* combine path, slash and command */
-	for (i = 0; i <=15; i++)
+	for (i = 1; pathparsed[i] != NULL; i++)
         {
 		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i]) + strlen(arguments[0]) + 2));
 		strcpy(eval_cmd, pathparsed[i]);
