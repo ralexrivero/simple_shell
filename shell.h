@@ -6,8 +6,9 @@
 
 /* Colors - prompt character and color style */
 /* the \033[ way */
-/* usage: WAY RED to print red */
-/* usage: WAY B CYN bold cyan */
+/* usage: */
+/* BRAND WAY B CYN */
+/* RESET WAY DEF */
 #define PROMPT "$ "
 #define WAY "\033["
 #define DEF "0m"
@@ -20,8 +21,6 @@
 #define CYN "36m"
 #define WHI "37m"
 #define B "1;"
-#define BRAND WAY B CYN
-#define RESET WAY DEF
 
 /* libraries */
 #include <sys/wait.h>

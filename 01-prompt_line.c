@@ -7,6 +7,6 @@
  */
 int prompt_line(void)
 {
-	_puts(BRAND PROMPT RESET);
+	_puts(WAY B CYN PROMPT WAY DEF);
 	return (0);
 }
