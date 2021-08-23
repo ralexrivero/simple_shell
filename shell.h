@@ -3,12 +3,11 @@
 
 /* start buffer */
 
-/**
- * @brief prompt character and color style
- * the \033[ way
- * usage: WAY RED to print red
- * usage: WAY B CYN bold cyan
- */
+
+/* Colors - prompt character and color style */
+/* the \033[ way */
+/* usage: WAY RED to print red */
+/* usage: WAY B CYN bold cyan */
 #define PROMPT "$ "
 #define WAY "\033["
 #define DEF "0m"
@@ -21,7 +20,7 @@
 #define CYN "36m"
 #define WHI "37m"
 #define B "1;"
-#define BRAND WAY B CYN 
+#define BRAND WAY B CYN
 #define RESET WAY DEF
 
 /* libraries */
@@ -41,13 +40,8 @@
 /* separate in directories the PATH, directories[0] not need  */
 #define ENVDELIM ":="
 
-/**
- * @brief prototypes for manage strings
- * everyone emulates the standard function
- * 
- * to implement: perror, 
- *  
- */
+
+/* prototypes - for manage strings */
 
 int _puts(char *string);
 int _strlen(char *string);
