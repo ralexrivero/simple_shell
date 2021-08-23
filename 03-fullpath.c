@@ -1,5 +1,13 @@
 #include "shell.h"
 
+/**
+ * fullpath - 
+ * 
+ * @path: 
+ * @envdelim: 
+ * Return: char** 
+ */
+
 char **fullpath(char *path, char *envdelim)
 {
 
@@ -24,19 +32,5 @@ char **fullpath(char *path, char *envdelim)
 		i++;
 	}
 	directories[i] = NULL;
-        return (directories);
+	return (directories);
 }
-
-/* int main(int argc, char **argv, char **envp)
-{
-	(void)argc;
-	(void)argv;
-
-	char *testenv = _getenv("PATH", envp);
-	printf("test: %s\n", testenv);
-	char ** testdir = fullpath(testenv, ENVDELIM);
-	for(int i = 0; testdir[i] != NULL; i++)
-	printf("testdir[%d]: %s\n", i, testdir[i]);
-	free(testdir);
-	return (0);
-} */
