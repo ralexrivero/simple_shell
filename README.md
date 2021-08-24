@@ -31,7 +31,7 @@ Standard C functions  and system calls employed for this simple_shell:
 - [ ] close (man 2 close)
 - [ ] closedir (man 3 closedir)
 - [x] execve (man 2 execve)
-- [ ] exit (man 3 exit)
+- [x] exit (man 3 exit)
 - [ ] _exit (man 2 _exit)
 - [ ] fflush (man 3 fflush)
 - [x] fork (man 2 fork)
@@ -39,7 +39,7 @@ Standard C functions  and system calls employed for this simple_shell:
 - [ ] getcwd (man 3 getcwd)
 - [ ] getline (man 3 getline)
 - [ ] getpid (man 2 getpid)
-- [ ] isatty (man 3 isatty)
+- [x] isatty (man 3 isatty)
 - [ ] kill (man 2 kill)
 - [x] malloc (man 3 malloc)
 - [ ] open (man 2 open)
@@ -131,9 +131,9 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 
 ## Features
 
-- [ ] uses the PATH
-- [ ] implements builtins
-- [ ] handles command line arguments
+- [x] uses the PATH
+- [x] implements builtins
+- [x] handles command line arguments
 - [ ] custom strtok function
 - [ ] uses exit status
 - [x] shell continues upon Crtl+C (**^C**)
@@ -147,11 +147,11 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 
 ## Builtins
 
-- [ ] exit
+- [x] exit
 - [ ] env
 - [ ] setenv
 - [ ] unsetenv
-- [ ] cd
+- [x] cd
 - [ ] help
 - [ ] history
 

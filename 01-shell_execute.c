@@ -14,8 +14,12 @@ int shell_execute(char **arguments, char **pathparsed)
 	int status, i = 0;
 	char *eval_cmd = NULL;
 
+	/* prompt if enter NULL */
 	if (arguments[0] == NULL)
 	return (1);
+	/* prompt if press enter only*/
+	/* if (arguments[0] == '\n')
+	return (1); */
 
 	/* fork current process and save status */
 	pid = fork();
