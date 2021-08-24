@@ -71,7 +71,7 @@ char *shell_read(void);
 char **shell_parse(char *input, char *delim);
 
 /* built-in commands */
-int shell_builtin(char **args);
+int shell_builtin(char **arguments, char **directories);
 int hsh_cd(char **args);
 int hsh_exit(void);
 int hsh_help(void);
