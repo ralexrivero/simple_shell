@@ -53,6 +53,7 @@ int shell_execute(char **arguments, char **pathparsed)
 	}
 			if (pathparsed[i] == NULL)
 		{
+			printf("argumento cero :%s\n", arguments[0]);
 			printf("llegue a NULL\n");
 			if (access(arguments[0], X_OK))
 			{
