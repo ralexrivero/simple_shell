@@ -2,7 +2,6 @@
 
 int hsh_help(void)
 {
-	int i;
 	printf("This Shell is for a Holberton School project\n");
 	printf("Type program names and arguments, and hit enter.\n");
 	printf("The following are built-ins:\n");

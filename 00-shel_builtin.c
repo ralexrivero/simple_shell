@@ -2,7 +2,7 @@
 
 int shell_builtin(char **arguments, char **directories)
 {
-	int i = 0, check;
+	int i = 0;
 	char *builtin_str[] = {
 		"cd",
 		"help",
@@ -12,7 +12,7 @@ int shell_builtin(char **arguments, char **directories)
 
 	for (i = 0; builtin_str[i]; i++)
 	{
-		if (strcmp(builtin_str[i], args[0]) == 0)
+		if (strcmp(builtin_str[i], arguments[0]) == 0)
 			break;
 	}
 	switch (i)
@@ -30,5 +30,5 @@ int shell_builtin(char **arguments, char **directories)
 			loop = shell_execute(arguments, directories);
 			break;
 	}
-	return (1);
+	return (loop);
 }
