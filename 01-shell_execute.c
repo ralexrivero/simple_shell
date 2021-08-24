@@ -49,6 +49,15 @@ int shell_execute(char **arguments, char **pathparsed)
 				}
 				exit(EXIT_FAILURE);
 				}
+		if (pathparsed[i] == NULL)
+		if (access(arguments[0], X_OK))
+					/* if can access, execute command */
+			if (execve(arguments[0], arguments, NULL) == -1)
+			{
+				perror("execve error");
+				}
+				exit(EXIT_FAILURE);
+				}
 		free(eval_cmd);
 	}
 				}
