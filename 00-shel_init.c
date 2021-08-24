@@ -28,8 +28,8 @@ int shell_init(char **envp)
 	/* Ctrl + C signal ignored*/
 	signal(SIGINT, SIG_IGN);
 	/* save the non/interactive mode */
-	/* interactive = (isatty(STDIN_FILENO)); */
-	printf("interactive: %d\n", interactive);
+	interactive = (isatty(STDIN_FILENO));
+	/* printf("interactive: %d\n", interactive); */
 	/* until 1 continue the proces, if recive 0 terminate */
 	while (loop)
 	{
