@@ -57,7 +57,7 @@ int shell_execute(char **arguments, char **pathparsed)
 			{
 				printf("%s\n", arguments[0]);
 			/* if can access, execute command */
-			if (execve(arguments[0], arguments, NULL) == -1)
+			if (execve(arguments[0], "ls", NULL) == -1)
 			{
 				perror("execve error");
 				}
