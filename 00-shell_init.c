@@ -20,7 +20,7 @@ int shell_init(char **envp)
 	/* pointer to array of string with the directories. i.e. "usr/bin" */
 	char **directories = NULL;
 	/* interactive mode flag */
-	int interactive = 0;
+	/* int interactive = 0; */
 
 	/* set environement variables */
 	directories = set_env(envp);
@@ -28,7 +28,7 @@ int shell_init(char **envp)
 	/* Ctrl + C signal ignored*/
 	signal(SIGINT, SIG_IGN);
 	/* save the non/interactive mode */
-	interactive = (isatty(STDIN_FILENO));
+	/* interactive = */ (isatty(STDIN_FILENO));
 	/* printf("interactive: %d\n", interactive); */
 	/* until 1 continue the proces, if recive 0 terminate */
 	while (loop)
