@@ -11,5 +11,5 @@ int _puts(char *string)
 	int length;
 
 	length = _strlen(string);
-	return (write(1, string, length));
+	return (write(STDOUT_FILENO, string, length));
 }
