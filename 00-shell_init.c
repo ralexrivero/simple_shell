@@ -29,17 +29,18 @@ int shell_init(char **envp)
 	signal(SIGINT, SIG_IGN);
 	/* save the interactive/non interactive mode */
 	interactive = (isatty(STDIN_FILENO));
-	printf("interactive: %d\n", interactive);
 	/* until 1 continue the proces, if recive 0 terminate */
 	while (loop)
 	{
 		/* add 1 to line count */
 		cmd_line++;
 		/* print the prompt in loop until exit */
-		if (interactive == 1) 
-		prompt_line();
-		/* function here fo non interactive */
-		/* non-interactive mode */
+		if (interactive == 1)
+		{
+			prompt_line();
+			loop = 0;
+		} 
+		
 		/* get input from user */
 		input = shell_read();
 		/* separate comands input */
