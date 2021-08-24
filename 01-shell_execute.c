@@ -49,7 +49,9 @@ int shell_execute(char **arguments, char **pathparsed)
 				}
 				exit(EXIT_FAILURE);
 				}
-		if (pathparsed[i] == NULL)
+		free(eval_cmd);
+	}
+			if (pathparsed[i] == NULL)
 		{
 			if (access(arguments[0], X_OK))
 			{
@@ -62,11 +64,6 @@ int shell_execute(char **arguments, char **pathparsed)
 				exit(EXIT_FAILURE);
 		}
 			}
-
-		
-		
-		free(eval_cmd);
-	}
 				}
 				else
 				/* wait parent process */
