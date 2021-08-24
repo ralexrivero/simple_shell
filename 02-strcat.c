@@ -25,7 +25,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	/* realloc */
-	dest = realloc(dest, len, sizeof(char) * total_len + 1);
+	dest = realloc(dest, sizeof(char) * total_len + 1);
 
 	while (src[j] != '\0')
 	{
