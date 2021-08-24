@@ -70,9 +70,13 @@ char *shell_read(void);
 /* separate line from input */
 char **shell_parse(char *input, char *delim);
 
+/* built-in commands */
+int shell_builtin(char **args);
+int hsh_cd(char **args);
+int hsh_exit(void);
+int hsh_help(void);
+
 /* the shell commands */
 int shell_execute(char **args, char **pathparsed);
-
-/* built-in commands */
 
 #endif
