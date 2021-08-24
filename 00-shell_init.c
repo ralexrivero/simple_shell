@@ -36,6 +36,7 @@ int shell_init(char **envp)
 		/* add 1 to line count */
 		cmd_line++;
 		/* print the prompt in loop until exit */
+		if (interactive == 1); 
 		prompt_line();
 		/* function here fo non interactive */
 		/* non-interactive mode */
