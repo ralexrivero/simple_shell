@@ -2,7 +2,7 @@
 
 int shell_builtin(char **arguments, char **directories)
 {
-	int i = 0;
+	int i = 0, loop = 1;
 	char *builtin_str[] = {
 		"cd",
 		"help",
