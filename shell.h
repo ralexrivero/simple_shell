@@ -49,6 +49,8 @@ int _wordlen(char *string);
 int _wordcount(char *string);
 int _worddelimcount(char *string);
 int _strcmp(char *s1, char *s2);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 
 /* get environment */
 char **set_env(char **envp);
