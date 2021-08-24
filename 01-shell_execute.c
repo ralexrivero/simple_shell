@@ -35,10 +35,10 @@ int shell_execute(char **arguments, char **pathparsed)
 	for (i = 1; pathparsed[i] != NULL; i++)
 	{
 		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i])
-		 + strlen(arguments[0]) + 2));
-		strcpy(eval_cmd, pathparsed[i]);
-		strcat(eval_cmd, "/");
-		strcat(eval_cmd, arguments[0]);
+		 + _strlen(arguments[0]) + 2));
+		_strcpy(eval_cmd, pathparsed[i]);
+		_strcat(eval_cmd, "/");
+		_strcat(eval_cmd, arguments[0]);
 		/* look if can access command */
 		if (access(eval_cmd, X_OK) == 0)
 		{

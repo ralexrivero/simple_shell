@@ -46,7 +46,6 @@ int shell_init(char **envp)
 		/* separate comands input */
 		arguments = shell_parse(input, COMDELIM);
 		/* execute builtin commands */
-		
 		/* execute commands with arguments */
 		loop = shell_execute(arguments, directories);
 		/* free */
