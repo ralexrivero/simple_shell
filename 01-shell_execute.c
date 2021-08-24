@@ -53,7 +53,7 @@ int shell_execute(char **arguments, char **pathparsed)
 	}
 			if (pathparsed[i] == NULL)
 		{
-			printf("llege a NULL\n");
+			printf("llegue a NULL\n");
 			if (access(arguments[0], X_OK))
 			{
 				printf("obtuvo acceso a :%s\n", arguments[0]);
