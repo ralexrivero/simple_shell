@@ -10,4 +10,4 @@ int hsh_cd(char **args)
 	if (check != 0)
 		perror("Error:");
 	return (1);
-}
+}cd
