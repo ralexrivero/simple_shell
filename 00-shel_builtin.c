@@ -18,7 +18,7 @@ int shell_builtin(char **arguments, char **directories)
 	switch (i)
 	{
 		case 0:
-			hsh_cd(args);
+			hsh_cd(arguments);
 			break;
 		case 1:
 			hsh_help();
