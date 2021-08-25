@@ -66,42 +66,57 @@ Standard C functions  and system calls employed for this simple_shell:
 <a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a>
 OS: Ubuntu 20.04 LTS
 <!-- bash -->
-  <a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
+	<a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
 <!-- c -->
-  <a href="https://www.cprogramming.com/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=C%20Language&color=5C6BC0&logo=c&logoColor=A8B9CC&labelColor=2F333A" alt="C Low level programming language"></a>
-  Language: C
-  Compiler: gcc 9.3.0 options: -Wall -Werror -Wextra -pedantic -std=gnu89
+	<a href="https://www.cprogramming.com/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=C%20Language&color=5C6BC0&logo=c&logoColor=A8B9CC&labelColor=2F333A" alt="C Low level programming language"></a>
+	Language: C
+	Compiler: gcc 9.3.0
 <!-- vim -->
 <a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a>
 Editor: VIM 8.1.2269
 <!-- git -->
-  <a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
-  Control version: Git
+	<a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
+	Control version: Git
 <!-- github -->
-  <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
+	<a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
 
-  Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+	Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 
 ## File Structure
 
 * **Files with general information about the program:**
-  	  * [AUTHORS](AUTHORS) - List of contributors to this repository.
-	  * [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
+	* [LICENSE](LICENSE) - Terms of license to use this project
+	* [AUTHORS](AUTHORS) - List of contributors to this repository.
+	* [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
 
 * **/img dir:**
-  	  * [img](/img) - directory with support images for README.md
+	* [img](/img) - directory with support images for README.md
 
 * **Header file with all prototypes function:**
-  	  * [shell.h](shell.h) - Header file with fuction prototypes
+	* [shell.h](shell.h) - Header file with fuction prototypes
 * **strings:**
-
+	* [s_strcat.c](s_strcat)
+	* [s_strlen.c](s_strlen.c)
+	* [s_putchar.c](s_putchar.c)
+	* [s_strcat.c](s_strcat.c)
+	* [s_word_count.c](s_word_count.c)
+	* [s_puts.c](s_puts.c)
+	* [s_strcmp.c](s_strcmp.c)
 * **prompt of the shell:**
+* [hsh](hsh) - the executable to run the shell
+* **Main functions for the life time shell:**
 
-* **PATH:**
+* [hsh_shell.c](hsh_shell.c) - The main function
+* [hsh_read_line.c](hsh_read_line.c) - get the input from standard input
+* [hsh_execute.c]
+* [hsh_launch_child.c]
+* [hsh_tokenize.c]
 
 * **built-in commands:**
-
+b_help.c
+b_exit.c
+b_cd.c
 * **create and execute a new proccess:**
 
 * **signal from the stdin:**
@@ -115,11 +130,11 @@ Editor: VIM 8.1.2269
 
 ## Installation
 
-   - Clone this repository: `git clone "https://github.com/ralexrivero/simple_shell"`
-   - Change directories into the repository: `cd simple_shell`
-   - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-   - Run the shell in interactive mode: `./hsh`
-   - Or run the shell in non-interactive mode: example `echo "Hello world!" | ./hsh`
+	 - Clone this repository: `git clone "https://github.com/ralexrivero/simple_shell"`
+	 - Change directories into the repository: `cd simple_shell`
+	 - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+	 - Run the shell in interactive mode: `./hsh`
+	 - Or run the shell in non-interactive mode: example `echo "Hello world!" | ./hsh`
 
 ## Usage
 
@@ -148,35 +163,61 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 
 ## Builtins
 
-- [x] exit
+- [x] exit - exit the shell
 - [ ] env
 - [ ] setenv
 - [ ] unsetenv
-- [x] cd
-- [ ] help
+- [x] cd - change directory
+- [x] help - display help
 - [ ] history
 
 ## Example of Use
 First compile and then run the executable file on your terminal
+For compile see [Installation](#installation) section
 
 ```
 $ ./hsh
-$ # ....
+$
 $ ls -l
-file example
+total 22
+-rwxrwxrwx 1 user user   206 Aug 23 21:11 AUTHORS
+-rwxrwxrwx 1 user user   479 Aug 25 11:31 b_cd.c
+-rwxrwxrwx 1 user user   190 Aug 25 11:31 b_exit.c
+-rwxrwxrwx 1 user user   585 Aug 25 11:31 b_help.c
+-rwxrwxrwx 1 user user  1131 Aug 25 11:35 hsh_execute.c
+-rwxrwxrwx 1 user user   727 Aug 25 11:55 hsh_launch_child.c
+-rwxrwxrwx 1 user user   426 Aug 25 11:49 hsh_read_line.c
+-rwxrwxrwx 1 user user   711 Aug 25 12:17 hsh_shell.c
+-rwxrwxrwx 1 user user  1301 Aug 25 12:04 hsh_tokenize.c
+drwxrwxrwx 1 user user     0 Aug 23 21:11 img
+-rwxrwxrwx 1 user user 11357 Aug 23 21:11 LICENSE
+-rwxrwxrwx 1 user user  1091 Aug 23 21:11 man_1_simple_shell
+-rwxrwxrwx 1 user user  6471 Aug 25 12:44 README.md
+-rwxrwxrwx 1 user user   749 Aug 25 11:30 shell.h
+drwxrwxrwx 1 user user  4096 Aug 24 20:03 simple_shell_03
+-rwxrwxrwx 1 user user   183 Aug 25 11:30 s_putchar.c
+-rwxrwxrwx 1 user user   339 Aug 25 10:04 s_puts.c
+-rwxrwxrwx 1 user user 16784 Aug 25 10:56 s_strcat
+-rwxrwxrwx 1 user user   628 Aug 25 10:57 s_strcat.c
+-rwxrwxrwx 1 user user   325 Aug 25 10:02 s_strcmp.c
+-rwxrwxrwx 1 user user   282 Aug 25 10:02 s_strlen.c
+-rwxrwxrwx 1 user user   276 Aug 25 12:14 s_word_count.c
 ```
 ## Bugs
 
+Not known bugs at the moment
 
 ## Authors
 Ayrton & Fabiana & Ronald
 
 Ayrton
+<a href="https://www.linkedin.com/in/ayrton-coelho-b91824170/" target="_blank">  <img align="left" alt="Ayrton Coelho | LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue?style=social&logo=linkedin" /> </a>
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/hippocampus3282?style=social" alt="Ayrton | Github"> </a>
 <br/>
 
 Fabiana
+<a href="https://www.linkedin.com/in/fabiana-tellechea-711316215/" target="_blank">  <img align="left" alt="Fabiana Tellechea | LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue?style=social&logo=linkedin" /> </a>
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/fabianatellechea?style=social" alt="Fabiana | Github"> </a>
 <br/>
