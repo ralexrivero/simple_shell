@@ -14,12 +14,13 @@ int main(int argc, char **argv, char **envp)
 	/* dont need argc and argv */
 	/* pointer to array of string with the path. i.e. "usr/bin" */
 	char **path = NULL;
-
+	(void)argc;
+	(void)argv;
 	/* set environement variables */
 	/* un array donde estan todos los directorios con los ejecutables*/
 	path = set_env(envp);
-	(void)argc;
-	(void)argv;
+
+
 
 	/* Ctrl + C signal ignored*/
 	signal(SIGINT, SIG_IGN);

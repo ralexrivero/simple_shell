@@ -1,13 +1,11 @@
 #include "shell.h"
-
 /**
  * fullpath - get the full path of the environment
  *
  * @path: pointer to the path from getenv function
  * @envdelim: the deliminter to parse the path
  * Return: pointer to array of string with every single path
- */
-
+ */	
 char **fullpath(char *path, char *envdelim)
 {
 	char *token_dir = NULL;

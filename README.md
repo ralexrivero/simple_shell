@@ -64,46 +64,47 @@ Standard C functions  and system calls employed for this simple_shell:
 ## Environment
 
 <!-- ubuntu -->
+
 <a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a>
 OS: Ubuntu 20.04 LTS
 <!-- bash -->
-	<a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
+<a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
 <!-- c -->
-	<a href="https://www.cprogramming.com/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=C%20Language&color=5C6BC0&logo=c&logoColor=A8B9CC&labelColor=2F333A" alt="C Low level programming language"></a>
-	Language: C
-	Compiler: gcc 9.3.0
+<a href="https://www.cprogramming.com/" target="_blank"><img src="https://img.shields.io/static/v1?label=&message=C%20Language&color=5C6BC0&logo=c&logoColor=A8B9CC&labelColor=2F333A" alt="C Low level programming language"></a>
+Language: C
+Compiler: gcc 9.3.0
 <!-- vim -->
 <a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a>
 Editor: VIM 8.1.2269
 <!-- git -->
-	<a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
-	Control version: Git
+<a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
+Control version: Git
 <!-- github -->
-	<a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
+<a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
 
-	Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 
 ## File Structure
 
 * **Files with general information about the program:**
-	* [LICENSE](LICENSE) - Terms of license to use this project
-	* [AUTHORS](AUTHORS) - List of contributors to this repository.
-	* [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
+* [LICENSE](LICENSE) - Terms of license to use this project
+* [AUTHORS](AUTHORS) - List of contributors to this repository.
+* [man_simple_shell](man_simple_shell) - Manual page for the simple_shell
 
 * **/img dir:**
-	* [img](/img) - directory with support images for README.md
+* [img](/img) - directory with support images for README.md
 
 * **Header file with all prototypes function:**
-	* [shell.h](shell.h) - Header file with fuction prototypes
+* [shell.h](shell.h) - Header file with fuction prototypes
 * **strings:**
-	* [s_strcat.c](s_strcat)
-	* [s_strlen.c](s_strlen.c)
-	* [s_putchar.c](s_putchar.c)
-	* [s_strcat.c](s_strcat.c)
-	* [s_word_count.c](s_word_count.c)
-	* [s_puts.c](s_puts.c)
-	* [s_strcmp.c](s_strcmp.c)
+* [s_strcat.c](s_strcat)
+* [s_strlen.c](s_strlen.c)
+* [s_putchar.c](s_putchar.c)
+* [s_strcat.c](s_strcat.c)
+* [s_word_count.c](s_word_count.c)
+* [s_puts.c](s_puts.c)
+* [s_strcmp.c](s_strcmp.c)
 * **prompt of the shell:**
 * [hsh](hsh) - the executable to run the shell
 * **Main functions for the life time shell:**
@@ -131,11 +132,11 @@ b_cd.c
 
 ## Installation
 
-	 - Clone this repository: `git clone "https://github.com/ralexrivero/simple_shell"`
-	 - Change directories into the repository: `cd simple_shell`
-	 - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
-	 - Run the shell in interactive mode: `./hsh`
-	 - Or run the shell in non-interactive mode: example `echo "Hello world!" | ./hsh`
+ - Clone this repository: `git clone "https://github.com/ralexrivero/simple_shell"`
+ - Change directories into the repository: `cd simple_shell`
+ - Compile: `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+ - Run the shell in interactive mode: `./hsh`
+ - Or run the shell in non-interactive mode: example `echo "Hello world!" | ./hsh`
 
 ## Usage
 
@@ -226,12 +227,14 @@ Not known bugs at the moment
 Ayrton & Fabiana & Ronald
 
 Ayrton
+
 <a href="https://www.linkedin.com/in/ayrton-coelho-b91824170/" target="_blank">  <img align="left" alt="Ayrton Coelho | LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue?style=social&logo=linkedin" /> </a>
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/hippocampus3282?style=social" alt="Ayrton | Github"> </a>
 <br/>
 
 Fabiana
+
 <a href="https://www.linkedin.com/in/fabiana-tellechea-711316215/" target="_blank">  <img align="left" alt="Fabiana Tellechea | LinkedIn" src="https://img.shields.io/badge/LinkedIn-blue?style=social&logo=linkedin" /> </a>
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/fabianatellechea?style=social" alt="Fabiana | Github"> </a>
