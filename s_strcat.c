@@ -1,39 +1,39 @@
 #include "shell.h"
 /**
- * _strcat - concatenate two strings (str1 + str2)
- * @str1: the string to concatenate str2
- * @str2: initial string
+ * _strcat - concatenate two strings (dest + src)
+ * @dest: the string to concatenate src
+ * @src: initial string
  * Return: the final and concatenated string
  */
-char *_strcat(char *str1, char *str2)
+char *_strcat(char *dest, char *src)
 {
-	char *newstring;
-	unsigned int len1, len2, newlen, i, j;
+	int len = 0;
+	int len2 = 0;
+	int total_len = 0;
+	int j = 0;
 
-	len1 = 0;
-	len2 = 0;
-	if (str1 == NULL)
-		len1 = 0;
-	else
+	/* must realloc the total size of both string */
+	while (dest[len] != '\0')
 	{
-		for (len1 = 0; str1[len1]; len1++)
-			;
+		len++;
+		total_len++;
 	}
-	if (str2 == NULL)
-		len2 = 0;
-	else
+	while (src[len2] != '\0')
 	{
-		for (len2 = 0; str2[len2]; len2++)
-			;
+		len2++;
+		total_len++;
 	}
-	newlen = len1 + len2 + 1;
-	newstring = malloc(newlen * sizeof(char));
-	if (newstring == NULL)
-		return (NULL);
-	for (i = 0; i < len1; i++)
-		newstring[i] = str1[i];
-	for (j = 0; j < len2; j++)
-		newstring[i + j] = str2[j];
-	newstring[len1 + len2] = '\0';
-	return (newstring);
+
+	/* realloc */
+	dest = realloc(dest, sizeof(char) * total_len + 1);
+
+	while (src[j] != '\0')
+	{
+		dest[len] = src[j];
+		len++;
+		j++;
+	}
+	dest[len] = '\0';
+
+	return (dest);
 }

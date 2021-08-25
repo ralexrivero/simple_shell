@@ -2,11 +2,10 @@
 /**
  * hsh_execute - execute builtins and commands
  * @args: pointer to string with arguments to execute
- * @path: array of strings with path (i.e. /bin)
  * args[0] may be a builtin or command (i.e. "cd", "ls")
  * Return: int (check) value for loop, if 1 the loop will continue
  */
-int hsh_execute(char **args, char **path)
+int hsh_execute(char **args, char **directories)
 {
 	/* i to iterate the string, check default 1 to continue the loop */
 	int i = 0, check = 1;
@@ -42,7 +41,7 @@ int hsh_execute(char **args, char **path)
 			break;
 		default:
 		/* dont found match, continue to try a command in path */
-			check = launch_child(args, path);
+			check = launch_child(args, directories);
 			break;
 	}
 	return (check);

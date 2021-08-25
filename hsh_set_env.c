@@ -8,10 +8,8 @@
  */
 char **set_env(char **envp)
 {
-	/* get path string*/
 	char *path = _getenv("PATH", envp);
-	/* tokenize path */
 	char **pathparsed = fullpath(path, ENVDELIM);
-	
+
 	return (pathparsed);
 }

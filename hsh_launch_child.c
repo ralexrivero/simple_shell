@@ -3,10 +3,9 @@
 /**
  * launch_child - fork process and launch command execution
  * @args: pointer to strings of arguments
- * @path: array of strings with the path of PATH (i.e. /bin)
  * Return: always 1 to continue the loop
  */
-int launch_child(char **args, char **path)
+int launch_child(char **args, char **directories)
 {
 	/* process id */
 	pid_t pid;
@@ -18,9 +17,9 @@ int launch_child(char **args, char **path)
 	if (pid == 0)
 	{
 		/* execute the arguments */
-		/* execvp(args[0], args); */
-		/* exit(EXIT_SUCCESS); */
-		hsh_runcomand(args, path);
+		/* execvp(args[0], args);
+		exit(EXIT_SUCCESS); */
+		hsh_runcomand(args, directories);
 	}
 	/* if pid is -1 display error */
 	else if (pid < 0)

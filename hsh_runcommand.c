@@ -1,23 +1,16 @@
 #include "shell.h"
-/**
- * hsh_runcomand - combine path with arguments to execute
- * Description: if not found access to path, try to execute the args[0]
- * i.e. /bin/ls
- * @args:
- * @path: 
- * @return 0 on success
- */
-int hsh_runcomand(char **args, char **path)
+
+int hsh_runcomand(char **args, char **pathparsed)
 {
 	int i = 0;
 	char *eval_cmd = NULL;
 
 	/* combine path, slash and command */
-	for (i = 1; path[i] != NULL; i++)
+	for (i = 1; pathparsed[i] != NULL; i++)
 	{
-		eval_cmd = malloc(sizeof(char) * (strlen(path[i])
+		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i])
 		 + _strlen(args[0]) + 2));
-		_strcpy(eval_cmd, path[i]);
+		_strcpy(eval_cmd, pathparsed[i]);
 		_strcat(eval_cmd, "/");
 		_strcat(eval_cmd, args[0]);
 		/* look if can access command */
@@ -32,7 +25,7 @@ int hsh_runcomand(char **args, char **path)
 				}
 		free(eval_cmd);
 	}
-			if (path[i] == NULL)
+			if (pathparsed[i] == NULL)
 		{
 			if (access(args[0], X_OK) == 0)
 			{
@@ -44,5 +37,5 @@ int hsh_runcomand(char **args, char **path)
 				exit(EXIT_FAILURE);
 		}
 			}
-	exit(EXIT_SUCCESS);
+        exit(EXIT_SUCCESS);
 }
