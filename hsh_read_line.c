@@ -20,6 +20,10 @@ char *read_line(void)
 			exit(EXIT_FAILURE);
 		}
 	}
+	if (line[0] == '\n')
+	line[0] == '\0';
+	/* con solo apretar enter hay segmentation fault */
+	/* queda line[-1] */
 	if (line[len - 1] == '\n')
 		line[len - 1] = '\0';
 	return (line);

@@ -14,10 +14,11 @@ Simple Unix Shell. Release date August 26, 2021
 * [Requirements](#requirements)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Feature](#features)
 * [Workflow](#Workflow)
 * [Example of Use](#example-of-use)
 * [Bugs](#bugs)
-* [Authors](#authors)
+* [Staff](#staff)
 * [License](#license)
 
 ## Description
@@ -139,6 +140,20 @@ b_cd.c
 ## Usage
 
 The simple_shell is designed to execute commands in a similar manner to sh, (see man page for complete information on usage):
+## Features
+
+- [x] uses the PATH
+- [x] implements builtins
+- [x] handles command line arguments
+- [ ] custom strtok function
+- [ ] uses exit status
+- [ ] shell continues upon Crtl+C (**^C**)
+- [ ] handles comments (#)
+- [ ] handles **;**
+- [ ] custom getline type function
+- [ ] handles **&&** and **||**
+- [ ] aliases
+- [ ] variable replacement
 
 ## Workflow
 <!-- iframes does not supported, use only svg with relative path -->
@@ -207,7 +222,7 @@ drwxrwxrwx 1 user user  4096 Aug 24 20:03 simple_shell_03
 
 Not known bugs at the moment
 
-## Authors
+## Staff
 Ayrton & Fabiana & Ronald
 
 Ayrton
