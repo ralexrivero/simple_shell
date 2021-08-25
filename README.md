@@ -37,7 +37,7 @@ Standard C functions  and system calls employed for this simple_shell:
 - [x] fork (man 2 fork)
 - [x] free (man 3 free)
 - [ ] getcwd (man 3 getcwd)
-- [ ] getline (man 3 getline)
+- [x] getline (man 3 getline)
 - [ ] getpid (man 2 getpid)
 - [x] isatty (man 3 isatty)
 - [ ] kill (man 2 kill)
@@ -79,7 +79,7 @@ Editor: VIM 8.1.2269
   Control version: Git
 <!-- github -->
   <a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
- 
+
   Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
 
