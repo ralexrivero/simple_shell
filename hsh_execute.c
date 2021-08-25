@@ -18,6 +18,9 @@ int hsh_execute(char **args)
 		"exit",
 		NULL
 	};
+	/* prompt if enter NULL */
+	if (args[0] == NULL)
+	return (1);
 	/* iterate the string */
 	for (i = 0; builtin_str[i]; i++)
 	{

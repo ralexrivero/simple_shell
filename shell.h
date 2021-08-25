@@ -15,25 +15,28 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-/* string functions */
-char *_strcat(char *str1, char *str2);
-int _puts(char *string);
-int _putchar(char c);
-
-/* CHILD_PROCESSES */
-char *_getenv(char *c);
-int word_count(char *str);
-int _strlen(char *str);
-
-int _strcmp(char *s1, char *s2);
+/* lifetime cicle */
 char *read_line(void);
-int launch_child(char **args);
 char **tokenize(char *line);
 int hsh_execute(char **args);
+int launch_child(char **args);
 
 /* BUILT-INS */
 int hsh_cd(char **args);
 int hsh_help(void);
 int hsh_exit(void);
+
+/* string functions */
+char *_strcat(char *str1, char *str2);
+int _puts(char *string);
+int _putchar(char c);
+int word_count(char *str);
+int _strlen(char *str);
+int _strcmp(char *s1, char *s2);
+
+/* CHILD_PROCESSES */
+/* char *_getenv(char *c); */
+
+
 
 #endif

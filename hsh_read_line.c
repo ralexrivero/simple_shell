@@ -5,26 +5,25 @@
  */
 char *read_line(void)
 {
-	char *line = NULL;
-	ssize_t bufsize = 0;
-	size_t len;
+	char *input = NULL;
+	/* define and set to 0 to getline allocate memory */
+	size_t buffer_size = 0;
 
-	len = getline(&line, &bufsize, stdin);
-	if (len == -1)
+	/* print prompt in color and reset color of input */
+	/* return -1 means failure reading line or reading EOF */
+	if (getline(&input, &buffer_size, stdin) == -1)
 	{
+		/* If receive and EOF (end of file) */
 		if (feof(stdin))
+		{
 			exit(EXIT_SUCCESS);
+		}
 		else
 		{
-			perror("readline");
+			perror("getline failure\n");
 			exit(EXIT_FAILURE);
 		}
 	}
-	if (line[0] == '\n')
-	line[0] == '\0';
-	/* con solo apretar enter hay segmentation fault */
-	/* queda line[-1] */
-	if (line[len - 1] == '\n')
-		line[len - 1] = '\0';
-	return (line);
+	return (input);
+	/* returns input with an EOF */
 }

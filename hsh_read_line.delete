@@ -1,0 +1,37 @@
+#include "shell.h"
+/**
+ * read_line - read line from standard input
+ * Return: pointer to the line entered
+ */
+char *read_line(void)
+{
+	char *line = NULL;
+	/* ssize_t bufsize = 0; */
+	/* lo que te decia del ssize_t ... */
+	size_t bufsize = 0;
+	/* size_t len; */
+	/* no es necesaria */
+
+	/* len = */ 
+	getline(&line, &bufsize, stdin);
+	/* pointer targets in passing argument 2 of ‘getline’ */
+	/* differ in signedness [-Werror=pointer-sign] */
+	/* if (len == -1) */
+	/* -1 esta fuera del rango del tipo unsigned */
+	/* error: comparison of integer expressions of different signedness: */
+	/* ‘size_t’ {aka ‘long unsigned int’} and ‘int’ [-Werror=sign-compare] */
+	{
+		if (feof(stdin))
+			exit(EXIT_SUCCESS);
+		else
+		{
+			perror("readline");
+			exit(EXIT_FAILURE);
+		}
+	}
+	/* con solo apretar enter hay segmentation fault */
+	/* queda line[-1] */
+	if (line[len - 1] == '\n')
+		line[len - 1] = '\0';
+	return (line);
+}

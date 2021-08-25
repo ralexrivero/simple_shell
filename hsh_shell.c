@@ -9,14 +9,12 @@
  */
 int main(int argc, char **argv, char **envp)
 {
+	char *line = NULL, **args = NULL;
+	int status = 1;
 	/* dont need argc and argv */
 	(void)argc;
 	(void)argv;
 	(void)envp;
-
-	char *line = NULL, **args = NULL;
-	int status = 1;
-
 	while (status)
 	{
 		_puts("$ ");
