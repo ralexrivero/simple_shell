@@ -15,16 +15,11 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 
-/* string functions */
-char *_strcat(char *str1, char *str2);
-int _puts(char *string);
-int _putchar(char c);
-
 /* CHILD_PROCESSES */
 char *_getenv(char *c);
 int word_count(char *str);
 int _strlen(char *str);
-
+char *_strcat(char *str1, char *str2);
 int _strcmp(char *s1, char *s2);
 char *read_line(void);
 int launch_child(char **args);
