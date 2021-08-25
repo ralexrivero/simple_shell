@@ -8,7 +8,7 @@ Simple Unix Shell. Release date August 26, 2021
 
 ## Table of Contents
 
-* [Introduction](#Introduction)
+* [Description](#Description)
 * [Environment](#Environment)
 * [File Structure](#file-structure)
 * [Requirements](#requirements)

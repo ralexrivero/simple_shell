@@ -5,7 +5,7 @@
  * @args: pointer to strings of arguments
  * Return: always 1 to continue the loop
  */
-int launch_child(char **args)
+int launch_child(char **args, char **directories)
 {
 	/* process id */
 	pid_t pid;
@@ -17,8 +17,9 @@ int launch_child(char **args)
 	if (pid == 0)
 	{
 		/* execute the arguments */
-		execvp(args[0], args);
-		exit(EXIT_SUCCESS);
+		/* execvp(args[0], args);
+		exit(EXIT_SUCCESS); */
+		hsh_runcomand(args, directories);
 	}
 	/* if pid is -1 display error */
 	else if (pid < 0)
