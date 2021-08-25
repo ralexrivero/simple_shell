@@ -27,7 +27,7 @@ simple_shell is a command line interpreter, or shell...
 Standard C functions  and system calls employed for this simple_shell:
 
 - [x] access (man 2 access)
-- [ ] chdir (man 2 chdir)
+- [x] chdir (man 2 chdir)
 - [ ] close (man 2 close)
 - [ ] closedir (man 3 closedir)
 - [x] execve (man 2 execve)
@@ -58,6 +58,7 @@ Standard C functions  and system calls employed for this simple_shell:
 - [ ] wait4 (man 2 wait4)
 - [x] write (man 2 write)
 
+- [x] realloc (man realloc)
 
 ## Environment
 

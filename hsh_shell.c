@@ -31,3 +31,4 @@ int main(int argc, char **argv, char **envp)
 
 /* originalmente al presionar enter da segmentarion fault */
 /* sin hacerle cambios */
+/* get_env no se puede usar la funcion porque tiene extern */
