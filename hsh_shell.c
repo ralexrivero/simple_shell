@@ -15,6 +15,9 @@ int main(int argc, char **argv, char **envp)
 	(void)argc;
 	(void)argv;
 	(void)envp;
+
+	/* Ctrl + C signal ignored*/
+	signal(SIGINT, SIG_IGN);
 	while (status)
 	{
 		_puts("$ ");
