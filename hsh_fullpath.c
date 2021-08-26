@@ -16,7 +16,7 @@ char **fullpath(char *path, char *envdelim)
 /* tokenize the path */
 /* the [0] is "PATH" */
 /* the others are directories to try the commands */
-	char **directories = malloc(sizeof(char *) * (path_q + 3));
+	char **directories = malloc(sizeof(char *) * (path_q + 2));
 	int i = 0;
 
 	if (!directories)
@@ -33,7 +33,6 @@ char **fullpath(char *path, char *envdelim)
 		i++;
 	}
 	directories[i] = NULL;
-	free(token_dir);
 	path = NULL;
 	return (directories);
 }

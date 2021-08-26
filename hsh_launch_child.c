@@ -20,8 +20,12 @@ int launch_child(char **args, char **directories)
 		/* execute the arguments */
 		hsh_runcomand(args, directories);
 	}
+	if (args)
+		free(args);
+	if (directories)
+		free(directories);
 	/* if pid is -1 display error */
-	else if (pid < 0)
+	if (pid < 0)
 	{
 		perror("Error:");
 	}

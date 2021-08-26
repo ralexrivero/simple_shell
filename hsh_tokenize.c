@@ -1,5 +1,4 @@
 #include "shell.h"
-#define TOK_BUFSIZE 64
 #define TOK_DELIM " \t\r\n\a"
 
 /**
@@ -9,11 +8,11 @@
  */
 char **tokenize(char *line)
 {
-	int bufsize = _strlen(line), i = 0;
+	int bufsize = _worddelimcount(line), i = 0;
 	char **tokens = NULL;
 	char *token = NULL;
 	/* alloc space for tokens */
-	tokens = malloc(sizeof(char *) * bufsize);
+	tokens = malloc(sizeof(char *) * (bufsize + 1));
 	if (!tokens)
 	/* check if malloc works propertly */
 	{
@@ -33,7 +32,6 @@ char **tokenize(char *line)
 		token = strtok(NULL, TOK_DELIM);
 	}
 	tokens[i] = NULL;
-	free(token);
 	/* return array of strings to main */
 	return (tokens);
 }

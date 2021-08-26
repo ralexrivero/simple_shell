@@ -10,9 +10,13 @@ int _worddelimcount(char *string)
 {
 	int i = 0, words = 0;
 
-	for (; string[i] != '\0'; i++)
+	if (string)
 	{
-		if (string[i] == 58)
+		for (; string[i] != '\0'; i++)
+		{
+			if (string[i] == ':')
+			words++;
+		}
 		words++;
 	}
 	return (words);
