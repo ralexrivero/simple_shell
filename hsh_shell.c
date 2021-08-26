@@ -10,7 +10,7 @@
 int main(int argc, char **argv, char **envp)
 {
 	char *line = NULL, **args = NULL;
-	int status = 1;
+	int status = 1, interactive = 0;
 	/* dont need argc and argv */
 	/* pointer to array of string with the directories. i.e. "usr/bin" */
 	char **directories = NULL;
@@ -19,21 +19,25 @@ int main(int argc, char **argv, char **envp)
 	directories = set_env(envp);
 	(void)argc;
 	(void)argv;
-
+	interactive = (isatty(STDIN_FILENO));
 	/* Ctrl + C signal ignored*/
 	signal(SIGINT, SIG_IGN);
 	while (status)
 	{
-		_puts("$ ");
+		if (interactive == 1)
+		{
+			_puts("$ ");
+		}
+		else
+		{
+			status = 0;
+		}
 		line = read_line();
 		args = tokenize(line);
 		status = hsh_execute(args, directories);
 		free(line);
 		free(args);
 	}
+	free(directories);
 	return (0);
 }
-
-/* originalmente al presionar enter da segmentarion fault */
-/* sin hacerle cambios */
-/* get_env no se puede usar la funcion porque tiene extern */

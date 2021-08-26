@@ -59,8 +59,6 @@ Standard C functions  and system calls employed for this simple_shell:
 - [ ] wait4 (man 2 wait4)
 - [x] write (man 2 write)
 
-- [x] realloc (man realloc)
-
 ## Environment
 
 <!-- ubuntu -->
