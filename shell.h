@@ -24,7 +24,7 @@ char **tokenize(char *line);
 char **set_env(char **envp);
 char *_getenv(const char *name, char **envp);
 char **fullpath(char *path, char *envdelim);
-int hsh_execute(char **args ,char **directories);
+int hsh_execute(char **args, char **directories);
 int hsh_runcomand(char **args, char **pathparsed);
 
 /* child processes */

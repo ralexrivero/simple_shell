@@ -10,6 +10,5 @@ char **set_env(char **envp)
 {
 	char *path = _getenv("PATH", envp);
 	char **pathparsed = fullpath(path, ENVDELIM);
-
 	return (pathparsed);
 }

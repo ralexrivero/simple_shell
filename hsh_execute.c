@@ -3,6 +3,7 @@
  * hsh_execute - execute builtins and commands
  * @args: pointer to string with arguments to execute
  * args[0] may be a builtin or command (i.e. "cd", "ls")
+ * @directories: string of paths
  * Return: int (check) value for loop, if 1 the loop will continue
  */
 int hsh_execute(char **args, char **directories)
@@ -18,7 +19,10 @@ int hsh_execute(char **args, char **directories)
 	};
 	/* prompt if enter NULL */
 	if (args[0] == NULL)
-	return (1);
+	{
+		free(args);
+		return (1);
+	}
 	/* iterate the string */
 	for (i = 0; builtin_str[i]; i++)
 	{

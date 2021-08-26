@@ -3,6 +3,7 @@
 /**
  * launch_child - fork process and launch command execution
  * @args: pointer to strings of arguments
+ * @directories: string of path
  * Return: always 1 to continue the loop
  */
 int launch_child(char **args, char **directories)
@@ -17,8 +18,6 @@ int launch_child(char **args, char **directories)
 	if (pid == 0)
 	{
 		/* execute the arguments */
-		/* execvp(args[0], args);
-		exit(EXIT_SUCCESS); */
 		hsh_runcomand(args, directories);
 	}
 	/* if pid is -1 display error */
