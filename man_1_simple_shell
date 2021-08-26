@@ -1,4 +1,4 @@
-.TH hsh 1 "August 24, 2021" "1.0" "hsh General Commands Manual"
+.TH hsh 1 "August 26, 2021" "1.0" "hsh General Commands Manual"
 
 .SH NAME
 
@@ -20,7 +20,7 @@ simple_shell is a command line interpreter
 
 .SH OVERVIEW
 
-Reading from either the terminal or files, simple_shell interprets and executes commands.
+Reading from the terminal or files, simple_shell interprets and executes commands.
 
 
 .SH INVOCATION
@@ -60,6 +60,5 @@ Ayrton Coelho <ayrtoncoelhods@gmail.com>
 Fabiana Telechea <fabianagtellechea@gmail.com>
 Ronald Rivero <ralexrivero@gmail.com>
 
-Ronald Rivero <ralexrivero@gmail.com>
 .SH SEE ALSO
 sh
