@@ -13,10 +13,12 @@ char **tokenize(char *line)
 	char *token = NULL;
 	/* alloc space for tokens */
 	tokens = malloc(sizeof(char *) * (bufsize + 1));
+	printf("malloc args[]\n");
 	if (!tokens)
 	/* check if malloc works propertly */
 	{
 		free(tokens);
+		printf("free args[]\n");
 		perror("allocation error");
 		exit(EXIT_FAILURE);
 	}

@@ -12,16 +12,17 @@ char **fullpath(char *path, char *envdelim)
 {
 	char *token_dir = NULL;
 	int path_q = _worddelimcount(path, ':');
-
+	int i = 0;
 /* tokenize the path */
 /* the [0] is "PATH" */
 /* the others are directories to try the commands */
 	char **directories = malloc(sizeof(char *) * (path_q + 2));
-	int i = 0;
+	printf("malloc path[]\n");
 
 	if (!directories)
 	{
 		free(directories);
+		printf("free path[]\n");
 		perror("malloc error fullpath 1");
 		exit(EXIT_FAILURE);
 	}

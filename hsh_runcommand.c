@@ -15,6 +15,7 @@ int hsh_runcomand(char **args, char **pathparsed)
 	{
 		eval_cmd = malloc(sizeof(char) * (strlen(pathparsed[i])
 		 + _strlen(args[0]) + 2));
+		printf("malloc eval_cmd\n");
 		_strcpy(eval_cmd, pathparsed[i]);
 		eval_cmd = _strcat(eval_cmd, "/");
 		eval_cmd = _strcat(eval_cmd, args[0]);
@@ -29,6 +30,7 @@ int hsh_runcomand(char **args, char **pathparsed)
 				exit(EXIT_FAILURE);
 				}
 		free(eval_cmd);
+		printf("free eval_cmd\n");
 	}
 			if (pathparsed[i] == NULL)
 		{

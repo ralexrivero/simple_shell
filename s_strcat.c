@@ -16,6 +16,7 @@ char *_strcat(char *s1, char *s2)
 		len2 = _strlen(s2);
 
 	final_str = malloc(sizeof(char) * (len1 + len2 + 1));
+	printf("malloc strcat\n");
 
 	for (i = 0; i < len1; i++)
 		final_str[i] = s1[i];

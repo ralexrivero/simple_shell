@@ -22,6 +22,7 @@ int launch_child(char **args, char **directories)
 	}
 	if (args)
 		free(args);
+	printf("free args[]\n");
 	/* if pid is -1 display error */
 	if (pid < 0)
 	{

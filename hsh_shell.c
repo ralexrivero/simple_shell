@@ -36,9 +36,15 @@ int main(int argc, char **argv, char **envp)
 		args = tokenize(line);
 		status = hsh_execute(args, directories);
 		if (line)
-		free(line);
+		{
+			free(line);
+			printf("free line\n");
+		}
 	}
 	if (directories)
-	free(directories);
+	{
+		free(directories);
+		printf("free directories[]\n");
+	}
 	return (0);
 }
