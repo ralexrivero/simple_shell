@@ -149,7 +149,7 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 
 ## Workflow
 <!-- iframes does not supported, use only svg with relative path -->
-![image](img/wkf_simple_shell_02.svg)
+![image](img/wkf_simple_shell_03.svg)
 ![image](img/wkf_simple_shell_execute.svg)
 
 ## Features
