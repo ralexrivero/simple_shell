@@ -20,7 +20,6 @@ int hsh_execute(char **args, char **directories)
 	/* prompt if enter NULL */
 	if (args[0] == NULL)
 	{
-		free(args);
 		return (1);
 	}
 	/* iterate the string */
@@ -50,5 +49,3 @@ int hsh_execute(char **args, char **directories)
 	}
 	return (check);
 }
-
-/* strcmp cambiado a custom */
