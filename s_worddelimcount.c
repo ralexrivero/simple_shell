@@ -6,7 +6,7 @@
  * Return: the number of words in string
  */
 
-int _worddelimcount(char *string)
+int _worddelimcount(char *string, char delim)
 {
 	int i = 0, words = 0;
 
@@ -14,7 +14,7 @@ int _worddelimcount(char *string)
 	{
 		for (; string[i] != '\0'; i++)
 		{
-			if (string[i] == ':')
+			if (string[i] == delim)
 			words++;
 		}
 		words++;

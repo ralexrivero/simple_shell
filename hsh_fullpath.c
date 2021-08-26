@@ -11,7 +11,7 @@
 char **fullpath(char *path, char *envdelim)
 {
 	char *token_dir = NULL;
-	int path_q = _worddelimcount(path);
+	int path_q = _worddelimcount(path, ':');
 
 /* tokenize the path */
 /* the [0] is "PATH" */

@@ -8,7 +8,7 @@
  */
 char **tokenize(char *line)
 {
-	int bufsize = _worddelimcount(line), i = 0;
+	int bufsize = _worddelimcount(line, ' '), i = 0;
 	char **tokens = NULL;
 	char *token = NULL;
 	/* alloc space for tokens */
@@ -16,6 +16,7 @@ char **tokenize(char *line)
 	if (!tokens)
 	/* check if malloc works propertly */
 	{
+		free(tokens);
 		perror("allocation error");
 		exit(EXIT_FAILURE);
 	}
