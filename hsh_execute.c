@@ -8,15 +8,9 @@
  */
 int hsh_execute(char **args, char **directories)
 {
-	/* i to iterate the string, check default 1 to continue the loop */
-	int i = 0, check = 1;
+	int i = 0, check = 1; /* check default 1 to continue the loop */
 	/* every string represent a builtin */
-	char *builtin_str[] = {
-		"cd",
-		"help",
-		"exit",
-		NULL
-	};
+	char *builtin_str[] = {"cd", "help", "exit", NULL};
 	/* prompt if enter NULL */
 	if (args[0] == NULL)
 	{
@@ -27,10 +21,8 @@ int hsh_execute(char **args, char **directories)
 	{
 		/* look for a match */
 		if (_strcmp(builtin_str[i], args[0]) == 0)
-		/* if found, break */
-			break;
+			break;/* i is the value of the match if found */
 	}
-	/* i is the value of the match if found */
 	switch (i) /* compare i in everay case, if found launch */
 	{
 		case 0:
@@ -42,8 +34,7 @@ int hsh_execute(char **args, char **directories)
 		case 2:
 			check = hsh_exit(); /* check return 0 to finish loop*/
 			break;
-		default:
-		/* dont found match, continue to try a command in path */
+		default: /* dont found match, continue to try a command in path */
 			check = launch_child(args, directories);
 			break;
 	}
