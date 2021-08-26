@@ -8,55 +8,54 @@ Simple Unix Shell. Release date August 26, 2021
 
 ## Table of Contents
 
-* [Description](#Description)
-* [Environment](#Environment)
-* [File Structure](#file-structure)
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Feature](#features)
-* [Workflow](#Workflow)
-* [Example of Use](#example-of-use)
-* [Bugs](#bugs)
-* [Staff](#staff)
-* [License](#license)
+	* [Description](#Description)
+	* [Environment](#Environment)
+	* [File Structure](#file-structure)
+	* [Requirements](#requirements)
+	* [Installation](#installation)
+	* [Usage](#usage)
+	* [Feature](#features)
+	* [Workflow](#Workflow)
+	* [Example of Use](#example-of-use)
+	* [Bugs](#bugs)
+	* [Staff](#staff)
+	* [License](#license)
 
 ## Description
 
-simple_shell is a command line interpreter, or shell...
-
+simple_shell is a command interpreter that uses funtions and system calls to execute programs stored in the O.S.
 Standard C functions  and system calls employed for this simple_shell:
 
 - [x] access (man 2 access)
 - [x] chdir (man 2 chdir)
-- [ ] close (man 2 close)
-- [ ] closedir (man 3 closedir)
+<!-- - [ ] close (man 2 close) -->
+<!-- - [ ] closedir (man 3 closedir) -->
 - [x] execve (man 2 execve)
 - [x] exit (man 3 exit)
-- [ ] _exit (man 2 _exit)
-- [ ] fflush (man 3 fflush)
+<!-- - [ ] _exit (man 2 _exit)
+- [ ] fflush (man 3 fflush) -->
 - [x] fork (man 2 fork)
 - [x] free (man 3 free)
-- [ ] getcwd (man 3 getcwd)
+<!-- - [ ] getcwd (man 3 getcwd) -->
 - [x] getline (man 3 getline)
-- [ ] getpid (man 2 getpid)
+<!-- - [ ] getpid (man 2 getpid) -->
 - [x] isatty (man 3 isatty)
-- [ ] kill (man 2 kill)
+<!-- - [ ] kill (man 2 kill) -->
 - [x] malloc (man 3 malloc)
-- [ ] open (man 2 open)
-- [ ] opendir (man 3 opendir)
+<!-- - [ ] open (man 2 open)
+- [ ] opendir (man 3 opendir) -->
 - [x] perror (man 3 perror)
-- [ ] read (man 2 read)
-- [ ] readdir (man 3 readdir)
+<!-- - [ ] read (man 2 read)
+- [ ] readdir (man 3 readdir) -->
 - [x] signal (man 2 signal)
-- [ ] stat (__xstat) (man 2 stat)
+<!-- - [ ] stat (__xstat) (man 2 stat)
 - [ ] lstat (__lxstat) (man 2 lstat)
-- [ ] fstat (__fxstat) (man 2 fstat)
+- [ ] fstat (__fxstat) (man 2 fstat) -->
 - [x] strtok (man 3 strtok)
 - [x] wait (man 2 wait)
-- [ ] waitpid (man 2 waitpid)
+<!-- - [ ] waitpid (man 2 waitpid)
 - [ ] wait3 (man 2 wait3)
-- [ ] wait4 (man 2 wait4)
+- [ ] wait4 (man 2 wait4) -->
 - [x] write (man 2 write)
 
 ## Environment
@@ -94,37 +93,33 @@ Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 * **Header file with all prototypes function:**
 	* [shell.h](shell.h) - Header file with fuction prototypes
 * **strings:**
-	* [s_strcat.c](s_strcat)
-	* [s_strlen.c](s_strlen.c)
-	* [s_putchar.c](s_putchar.c)
-	* [s_strcat.c](s_strcat.c)
-	* [s_word_count.c](s_word_count.c)
-	* [s_puts.c](s_puts.c)
-	* [s_strcmp.c](s_strcmp.c)
+	* [s_putchar.c](s_putchar.c) - print a character
+	* [s_puts.c](s_puts.c) - write a string
+	* [s_strcat.c](s_strcat) - concatenate two strings
+	* [s_strcmp.c](s_strcmp) - compare two strings
+	* [s_strcpy.c](s_strcpy) - copy a string to another
+	* [s_strlen.c](s_strlen.c) - get length of a string
+	* [s_word_count.c](s_word_count.c) - count words in a string
+	* [s_worddelimcount.c](s_worddelimcount.c) - count a serie of characters in a string
+
 * **prompt of the shell:**
 * [hsh](hsh) - the executable to run the shell
 * **Main functions for the life time shell:**
 
 * [hsh_shell.c](hsh_shell.c) - The main function
 * [hsh_read_line.c](hsh_read_line.c) - get the input from standard input
-* [hsh_execute.c]
-* [hsh_launch_child.c]
-* [hsh_tokenize.c]
+* [hsh_execute.c](hsh_execute.c) - launch functions to execute the command
+* [hsh_launch_child.c](hsh_launch_child.c) - launch child process
+* [hsh_tokenize.c](hsh_tokenize.c) - tokenize the argument line
+* [hsh_runcommand.c](hsh_runcommand.c) - run the command if found in the path
+* [hsh_set_env.c](hsh_set_env.c) - return the environment variables tokenized
+* [hsh_getenv.c](hsh_getenv.c) - get the environment variable
+* [hsh_fullpath.c](hsh_fullpath.c) - tokenize the path
 
 * **built-in commands:**
-b_help.c
-b_exit.c
-b_cd.c
-* **create and execute a new proccess:**
-
-* **signal from the stdin:**
-]
-* **handle errors:**
-
-* **frees allocated memory:**
-
-* **Other needed functions:**
-
+* [b_help.c](b_help.c) - display help
+* [b_exit.c](b_exit.c) - exit the shell
+* [b_cd.c](b_cd.c) - change the directory
 
 ## Installation
 
@@ -142,46 +137,45 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 - [x] uses the PATH
 - [x] implements builtins
 - [x] handles command line arguments
-- [ ] custom strtok function
+<!-- - [ ] custom strtok function -->
 - [x] uses exit status
-- [ ] shell continues upon Crtl+C (**^C**)
+<!-- - [ ] shell continues upon Crtl+C (**^C**)
 - [ ] handles comments (#)
 - [ ] handles **;**
 - [ ] custom getline type function
 - [ ] handles **&&** and **||**
 - [ ] aliases
-- [ ] variable replacement
+- [ ] variable replacement -->
 
 ## Workflow
 <!-- iframes does not supported, use only svg with relative path -->
 ![image](img/wkf_simple_shell_01.svg)
-
 
 ## Features
 
 - [x] uses the PATH
 - [x] implements builtins
 - [x] handles command line arguments
-- [ ] custom strtok function
-- [ ] uses exit status
+<!-- - [ ] custom strtok function
+- [ ] uses exit status -->
 - [x] shell continues upon Crtl+C (**^C**)
-- [ ] handles comments (#)
+<!-- - [ ] handles comments (#)
 - [ ] handles **;**
 - [ ] custom getline type function
 - [ ] handles **&&** and **||**
 - [ ] aliases
-- [ ] variable replacement
+- [ ] variable replacement -->
 
 
 ## Builtins
 
 - [x] exit - exit the shell
-- [ ] env
+<!-- - [ ] env
 - [ ] setenv
-- [ ] unsetenv
+- [ ] unsetenv -->
 - [x] cd - change directory
 - [x] help - display help
-- [ ] history
+<!-- - [ ] history -->
 
 ## Example of Use
 First compile and then run the executable file on your terminal
