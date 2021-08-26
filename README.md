@@ -132,20 +132,6 @@ Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 ## Usage
 
 The simple_shell is designed to execute commands in a similar manner to sh, (see man page for complete information on usage):
-## Features
-
-- [x] uses the PATH
-- [x] implements builtins
-- [x] handles command line arguments
-<!-- - [ ] custom strtok function -->
-- [x] uses exit status
-<!-- - [ ] shell continues upon Crtl+C (**^C**)
-- [ ] handles comments (#)
-- [ ] handles **;**
-- [ ] custom getline type function
-- [ ] handles **&&** and **||**
-- [ ] aliases
-- [ ] variable replacement -->
 
 ## Workflow
 <!-- iframes does not supported, use only svg with relative path -->
