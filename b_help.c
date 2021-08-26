@@ -26,4 +26,3 @@ int hsh_help(void)
 	return (1);
 }
 
-/* no se puede usar printf */

@@ -14,3 +14,4 @@ int _puts(char *string)
 	length = _strlen(string);
 	return (write(STDOUT_FILENO, string, length));
 }
+

@@ -35,9 +35,9 @@ int main(int argc, char **argv, char **envp)
 		line = read_line();
 		args = tokenize(line);
 		status = hsh_execute(args, directories);
-		if(line)
+		if (line)
 		free(line);
-		if(args)
+		if (args)
 		free(args);
 	}
 	free(directories);

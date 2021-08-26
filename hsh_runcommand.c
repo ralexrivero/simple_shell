@@ -44,3 +44,4 @@ int hsh_runcomand(char **args, char **pathparsed)
 		}
 	exit(EXIT_SUCCESS);
 }
+

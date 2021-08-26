@@ -18,7 +18,7 @@ char **fullpath(char *path, char *envdelim)
 /* the others are directories to try the commands */
 	char **directories = malloc(sizeof(char *) * (path_q + 3));
 	int i = 0;
-	
+
 	if (!directories)
 	{
 		free(directories);
