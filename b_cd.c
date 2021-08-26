@@ -18,6 +18,3 @@ int hsh_cd(char **args)
 		perror("Error:");
 	return (1);
 }
-
-/* no se puede usar fprintf */
-/* llevar al home, no tiene que dar error si no se pasa argumentos */

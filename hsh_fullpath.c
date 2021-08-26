@@ -18,9 +18,10 @@ char **fullpath(char *path, char *envdelim)
 /* the others are directories to try the commands */
 	char **directories = malloc(sizeof(char *) * (path_q + 3));
 	int i = 0;
-
+	
 	if (!directories)
 	{
+		free(directories);
 		perror("malloc error fullpath 1");
 		exit(EXIT_FAILURE);
 	}
@@ -32,5 +33,7 @@ char **fullpath(char *path, char *envdelim)
 		i++;
 	}
 	directories[i] = NULL;
+	free(token_dir);
+	path = NULL;
 	return (directories);
 }

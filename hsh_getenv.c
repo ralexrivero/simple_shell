@@ -2,7 +2,6 @@
 
 /**
  * _getenv - get the value of an environment variable
- *
  * @name: name of the environment variable
  * @envp:pointer to the environment variables
  * Return: char* with the matching path

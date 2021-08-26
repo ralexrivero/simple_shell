@@ -17,7 +17,6 @@ char **tokenize(char *line)
 	if (!tokens)
 	/* check if malloc works propertly */
 	{
-		/* fprintf(stderr, "allocation error\n"); */
 		perror("allocation error");
 		exit(EXIT_FAILURE);
 	}
@@ -34,6 +33,7 @@ char **tokenize(char *line)
 		token = strtok(NULL, TOK_DELIM);
 	}
 	tokens[i] = NULL;
+	free(token);
 	/* return array of strings to main */
 	return (tokens);
 }
