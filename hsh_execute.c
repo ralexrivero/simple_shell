@@ -16,8 +16,7 @@ int hsh_execute(char **args, char **directories)
 	{
 		return (1);
 	}
-	/* iterate the string */
-	for (i = 0; builtin_str[i]; i++)
+	for (i = 0; builtin_str[i]; i++)/* iterate the string */
 	{
 		/* look for a match */
 		if (_strcmp(builtin_str[i], args[0]) == 0)

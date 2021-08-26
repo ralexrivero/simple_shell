@@ -46,4 +46,7 @@ int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 int _worddelimcount(char *string);
 
+/* custom functions */
+char *_getline(void);
+
 #endif

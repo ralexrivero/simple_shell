@@ -33,5 +33,3 @@ int launch_child(char **args, char **directories)
 	/* return to main */
 	return (1);
 }
-
-/* no se puede usar execvp */

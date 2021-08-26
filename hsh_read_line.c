@@ -13,6 +13,7 @@ char *read_line(void)
 	/* return -1 means failure reading line or reading EOF */
 	if (getline(&input, &buffer_size, stdin) == -1)
 	{
+		free(input);
 		/* If receive and EOF (end of file) */
 		if (feof(stdin))
 		{
