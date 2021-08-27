@@ -41,6 +41,5 @@ int main(int argc, char **argv, char **envp)
 			free(directories);
 	}
 	free(directories);
-	printf("final\n");
 	return (0);
 }
