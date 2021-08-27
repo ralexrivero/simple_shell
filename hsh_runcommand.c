@@ -31,6 +31,7 @@ int hsh_runcomand(char **args, char **pathparsed)
 		free(eval_cmd);
 	}
 			if (pathparsed[i] == NULL)
+				free(pathparsed);
 		{
 			if (access(args[0], X_OK) == 0)
 			{

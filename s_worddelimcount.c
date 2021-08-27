@@ -2,7 +2,8 @@
 
 /**
  * _worddelimcount - count the words without the ':' separator, ascii 58
- *@string: pointer to the string to count words separeted with delim
+ * @string: pointer to the string to count words separeted with delim
+ * @delim: delimiter for tokenize strings
  * Return: the number of words in string
  */
 

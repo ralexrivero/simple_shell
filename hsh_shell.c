@@ -37,8 +37,10 @@ int main(int argc, char **argv, char **envp)
 		status = hsh_execute(args, directories);
 		if (line)
 		free(line);
+		if (interactive == 0)
+			free(directories);
 	}
-	if (directories)
 	free(directories);
+	printf("final\n");
 	return (0);
 }
