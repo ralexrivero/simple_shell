@@ -21,7 +21,11 @@ int main(int argc, char **argv, char **envp)
 	(void)argv;
 	interactive = (isatty(STDIN_FILENO));
 	/* Ctrl + C signal ignored*/
-	signal(SIGINT, SIG_IGN);
+	/* SIGINT: program interrupt signal or Ctrl + c */
+	/* SIG_IGN: signal to ignore */
+	if (signal(SIGINT, SIG_IGN) == (__sighandler_t) 1)
+	_putchar('\n');
+	/* loop until exit */
 	while (status)
 	{
 		if (interactive == 1)

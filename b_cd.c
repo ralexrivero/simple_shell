@@ -14,7 +14,12 @@ int hsh_cd(char **args)
 		/* cd nos lleva al home */
 		puts("Expected argument to cd");
 	check = chdir(args[1]);
+	free(args);
 	if (check != 0)
+	{
 		perror("Error:");
+		free(args);
+	}
+
 	return (1);
 }
