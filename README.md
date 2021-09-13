@@ -79,7 +79,6 @@ Control version: Git
 
 Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
-
 ## File Structure
 
 * **Files with general information about the program:**
@@ -153,7 +152,6 @@ The simple_shell is designed to execute commands in a similar manner to sh, (see
 - [ ] aliases
 - [ ] variable replacement -->
 
-
 ## Builtins
 
 - [x] exit - exit the shell
@@ -216,7 +214,6 @@ Fabiana
 
 <a href="https://github.com/hippocampus3282/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/fabianatellechea?style=social" alt="Fabiana | Github"> </a>
 <br/>
-
 
 Ronald
 

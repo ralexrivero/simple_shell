@@ -20,11 +20,6 @@ int main(int argc, char **argv, char **envp)
 	(void)argc;
 	(void)argv;
 	interactive = (isatty(STDIN_FILENO));
-	/* Ctrl + C signal ignored*/
-	/* SIGINT: program interrupt signal or Ctrl + c */
-	/* SIG_IGN: signal to ignore */
-	if (signal(SIGINT, SIG_IGN) == (__sighandler_t) 1)
-	_putchar('\n');
 	/* loop until exit */
 	while (status)
 	{
@@ -36,6 +31,10 @@ int main(int argc, char **argv, char **envp)
 		{
 			status = 0;
 		}
+		/* Ctrl + C signal ignored*/
+		/* SIGINT: program interrupt signal or Ctrl + c */
+		/* SIG_IGN: signal to ignore */
+		signal(SIGINT, handle_ctrlc);
 		line = read_line();
 		args = tokenize(line);
 		status = hsh_execute(args, directories);

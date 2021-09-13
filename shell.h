@@ -49,4 +49,7 @@ int _worddelimcount(char *string, char delim);
 /* custom functions */
 char *_getline(void);
 
+/* helper functions */
+void handle_ctrlc(int n);
+
 #endif
